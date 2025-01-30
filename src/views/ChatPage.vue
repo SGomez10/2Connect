@@ -38,9 +38,9 @@ import {
     IonToolbar,
     IonButtons,
     IonFooter,
-    IonImg,
+    IonIcon,
     IonItem,
-    IonTextarea
+    IonButton
 } from '@ionic/vue';
 </script>
 

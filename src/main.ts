@@ -3,6 +3,14 @@ import App from './App.vue'
 import router from './router';
 
 import { IonicVue } from '@ionic/vue';
+import { addIcons } from 'ionicons';
+import { sendOutline,
+  peopleOutline,  
+  person, 
+  chatboxEllipsesOutline, 
+  homeOutline,
+  notificationsOutline 
+} from 'ionicons/icons';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/vue/css/core.css';
@@ -33,6 +41,15 @@ import '@ionic/vue/css/palettes/dark.system.css';
 
 /* Theme variables */
 import './theme/variables.css';
+
+addIcons({
+  'send-outline': sendOutline,
+  'people-outline': peopleOutline,
+  'person': person,
+  'chatbox-ellipses-outline': chatboxEllipsesOutline,
+  'home-outline': homeOutline,
+  'notifications-outline': notificationsOutline
+});
 
 const app = createApp(App)
   .use(IonicVue)

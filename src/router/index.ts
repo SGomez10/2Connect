@@ -6,7 +6,8 @@ import RegisterPage from '@/views/RegisterPage.vue';
 import EditProfilePage from '@/views/EditProfilePage.vue';
 import ChatMenuPage from '@/views/ChatMenuPage.vue';
 import ChatPage from '@/views/ChatPage.vue';
-
+import MainPage from '@/views/MainPage.vue';
+import NotificationsPage from '@/views/NotificationsPage.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -43,6 +44,16 @@ const routes: Array<RouteRecordRaw> = [
     path: '/chat/:id',
     name: 'Chat',
     component: ChatPage
+  },
+  {
+    path: '/main',
+    name: 'Main',
+    component: MainPage
+  },
+  {
+    path: '/notifications',
+    name: 'Notifications',
+    component: NotificationsPage
   }
 
 ]

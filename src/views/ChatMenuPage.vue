@@ -2,6 +2,9 @@
     <ion-page>
         <ion-header>
             <ion-toolbar>
+                <ion-buttons slot="start">
+                    <ion-back-button></ion-back-button>
+                </ion-buttons>     
                 <ion-title>2Connect</ion-title>
             </ion-toolbar>
         </ion-header>
@@ -85,7 +88,9 @@ import {
     IonAvatar,
     IonItem,
     IonLabel,
-    IonSearchbar
+    IonSearchbar,
+    IonButtons,
+    IonBackButton
 } from '@ionic/vue';
 import { RouterLink } from 'vue-router';
 </script>
