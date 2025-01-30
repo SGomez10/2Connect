@@ -10,7 +10,19 @@
         </ion-header>    
 
         <ion-content>
+            
+            <ion-item no-lines>
+                <ion-avatar slot="start">
+                    <img src="https://ionicframework.com/docs/demos/api/list/avatar-finn.png" alt="Avatar">
+                </ion-avatar>
+                <ion-label>
+                    <h2>John Doe</h2>
+                    <p>Última conexión a las 14:53h</p>
+                </ion-label>
+            </ion-item>
+
             <!-- Zona de chat -->
+
         </ion-content>
 
         <ion-footer>
@@ -39,6 +51,8 @@ import {
     IonButtons,
     IonFooter,
     IonIcon,
+    IonAvatar,
+    IonLabel,
     IonItem,
     IonButton
 } from '@ionic/vue';

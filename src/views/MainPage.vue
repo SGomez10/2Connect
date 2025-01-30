@@ -24,13 +24,23 @@
         </ion-header>
 
         <ion-content>
-            
+            <ion-card class="full-width-card">
+                <ion-card-header>
+                    <ion-avatar slot="start">
+                        <img src="https://ionicframework.com/docs/demos/api/list/avatar-finn.png" alt="Avatar">
+                    </ion-avatar>
+                    <ion-card-title>John Doe</ion-card-title>
+                    <ion-card-subtitle>30 de Enero de 2025 16:45</ion-card-subtitle>
+                </ion-card-header>
+                <ion-card-content>
+                    <ion-img src="https://ionicframework.com/docs/demos/api/card/madison.jpg"></ion-img>
+                    <div class="card-info">
+                        <p>20 Comentarios</p>
+                        <p>7 Compartidos</p>
+                    </div>
+                </ion-card-content>
+            </ion-card>
         </ion-content>
-
-
-
-
-
 
     </ion-page>
 </template>
@@ -42,12 +52,19 @@
         IonToolbar,
         IonButtons,
         IonImg,
+        IonAvatar,
+        IonLabel,
         IonItem,
         IonTextarea,
         IonButton,
-        IonIcon
+        IonIcon,
+        IonCard,
+        IonCardHeader,
+        IonCardTitle,
+        IonCardSubtitle,
+        IonCardContent
     } from '@ionic/vue';
-    import { Swiper } from 'swiper/vue';
+
     import { useRouter } from 'vue-router';
 
     const router = useRouter();
@@ -64,5 +81,14 @@
     height: 30px;
     margin-left: 10px;
     object-fit: contain; /* Ajusta la imagen dentro del contenedor */
+    }
+    .card-info {
+        margin-top: 10px;
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+    .full-width-card {
+        width: 100%;
     }
 </style>

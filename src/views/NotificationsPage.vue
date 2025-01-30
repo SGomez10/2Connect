@@ -9,17 +9,17 @@
             </ion-toolbar>
         </ion-header>    
 
-        <ion-content class="ion-padding">
+        <ion-content>
             <!-- Zona de notificaciones -->
             <h2>Notificaciones</h2>
-            <ion-list class="notification-list">
+            <ion-list class="notification-list" lines="full">
                 <ion-item>
                     <ion-avatar slot="start">
                         <img src="https://ionicframework.com/docs/demos/api/list/avatar-finn.png" />
                     </ion-avatar>
                     <ion-label>
                         <h2>John Doe</h2>
-                        <p class="small-text">Texto de ejemplo</p>
+                        <p class="small-text">Ha comentado en tu publicación</p>
                     </ion-label>
                 </ion-item>
                 <ion-item>
@@ -28,7 +28,7 @@
                     </ion-avatar>
                     <ion-label>
                         <h2>Han Solo</h2>
-                        <p class="small-text">Texto de ejemplo</p>
+                        <p class="small-text">Te ha añadido a amigos</p>
                     </ion-label>
                 </ion-item>
                 <ion-item>
@@ -37,7 +37,7 @@
                     </ion-avatar>
                     <ion-label>
                         <h2>Luke Skywalker</h2>
-                        <p class="small-text">Texto de ejemplo</p>
+                        <p class="small-text">Le ha dado "Me gusta" a tu publicación</p>
                     </ion-label>
                 </ion-item>
                 <ion-item>
@@ -46,7 +46,7 @@
                     </ion-avatar>
                     <ion-label>
                         <h2>Leia Organa</h2>
-                        <p class="small-text">Texto de ejemplo</p>
+                        <p class="small-text">Ha publicado contenido en su perfil</p>
                     </ion-label>
                 </ion-item>
             </ion-list>

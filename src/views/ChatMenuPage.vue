@@ -2,9 +2,23 @@
     <ion-page>
         <ion-header>
             <ion-toolbar>
-                <ion-buttons slot="start">
-                    <ion-back-button></ion-back-button>
-                </ion-buttons>     
+                <ion-buttons slot="end">
+                    <ion-button fill="clear" @click="navigateTo('/main')">
+                        <ion-icon name="home-outline"></ion-icon>
+                    </ion-button>
+                    <ion-button fill="clear" @click="navigateTo('#')">      <!-- Menú Amigos -->
+                        <ion-icon name="people-outline"></ion-icon>
+                    </ion-button>
+                    <ion-button fill="clear" @click="navigateTo('#')">  <!-- Mi perfil -->
+                        <ion-icon name="person"></ion-icon>
+                    </ion-button>
+                    <ion-button fill="clear" @click="navigateTo('/chat-menu')">  <!-- Mensajes -->
+                        <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+                    </ion-button>
+                    <ion-button fill="clear" @click="navigateTo('/notifications')"> <!-- Notificaciones -->
+                        <ion-icon name="notifications-outline"></ion-icon>
+                    </ion-button>
+                </ion-buttons>
                 <ion-title>2Connect</ion-title>
             </ion-toolbar>
         </ion-header>
@@ -92,7 +106,16 @@ import {
     IonButtons,
     IonBackButton
 } from '@ionic/vue';
-import { RouterLink } from 'vue-router';
+
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+const navigateTo = (path: string) => {
+    router.push(path);
+}
+
+
 </script>
 
 <style scoped>
