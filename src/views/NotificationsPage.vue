@@ -73,5 +73,7 @@ import {
 <style scoped>
 .notification-list {
     --background: var(--ion-background-color);
+    margin: 0; /* Remove margins */
+    padding: 0; /* Remove padding */
 }
 </style>

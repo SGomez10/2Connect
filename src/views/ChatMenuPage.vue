@@ -27,64 +27,29 @@
             <h2>Mensajes</h2>
 
             <ion-searchbar placeholder="Buscar Chat"></ion-searchbar>
-
+                
             <ion-list lines="none" class="c-bg">
-                <!-- Ejemplo de avatar 1 -->
-                <router-link :to="{ path: '/chat/1' }" class="no-underline">
-                    <ion-item class="c-bg">
-                        <ion-avatar slot="start">
-                            <img src="https://ionicframework.com/docs/demos/api/list/avatar-finn.png" />
-                        </ion-avatar>
-                        <ion-label class="c-bg">
-                            <h2>John Doe</h2>
-                            <p class="small-text">Texto de ejemplo</p>
-                        </ion-label>
-                    </ion-item>
-                </router-link>
 
-                <!-- Ejemplo de avatar 2 -->
-                <ion-item class="c-bg">
-                    <ion-avatar slot="start">
-                        <img src="https://ionicframework.com/docs/demos/api/list/avatar-han.png" />
-                    </ion-avatar>
-                    <ion-label class="c-bg">
-                        <h2>Han Solo</h2>
-                        <p class="small-text">Texto de ejemplo</p>
-                    </ion-label>
-                </ion-item>
+                <ChatListComponent
+                    link="/chat/1"
+                    avatar-src="https://ionicframework.com/docs/demos/api/list/avatar-finn.png"
+                    name="Finn"
+                    text="Texto de ejemplo"
+                />
 
-                <!-- Ejemplo de avatar 3 -->
-                <ion-item class="c-bg">
-                    <ion-avatar slot="start">
-                        <img src="https://ionicframework.com/docs/demos/api/list/avatar-luke.png" />
-                    </ion-avatar>
-                    <ion-label class="c-bg">
-                        <h2>Luke Skywalker</h2>
-                        <p class="small-text">Texto de ejemplo</p>
-                    </ion-label>
-                </ion-item>
+                <ChatListComponent 
+                link="/chat/1"
+                    avatar-src="https://ionicframework.com/docs/demos/api/list/avatar-han.png"
+                    name="Han Solo"
+                    text="Texto de ejemplo"
+                />
 
-                <!-- Ejemplo de avatar 4 -->
-                <ion-item class="c-bg">
-                    <ion-avatar slot="start">
-                        <img src="https://ionicframework.com/docs/demos/api/list/avatar-leia.png" />
-                    </ion-avatar>
-                    <ion-label class="c-bg">
-                        <h2>Leia Organa</h2>
-                        <p class="small-text">Texto de ejemplo</p>
-                    </ion-label>
-                </ion-item>
-
-                <!-- Ejemplo de avatar 5 -->
-                <ion-item class="c-bg">
-                    <ion-avatar slot="start">
-                        <img src="https://ionicframework.com/docs/demos/api/list/avatar-rey.png" />
-                    </ion-avatar>
-                    <ion-label class="c-bg">
-                        <h2>Rey</h2>
-                        <p class="small-text">Texto de ejemplo</p>
-                    </ion-label>
-                </ion-item>
+                <ChatListComponent 
+                    link="/chat/1"
+                    avatar-src="https://ionicframework.com/docs/demos/api/list/avatar-luke.png"
+                    name="Luke Skywalker"
+                    text="Texto de ejemplo"            
+                />
 
             </ion-list>
         </ion-content>
@@ -108,6 +73,7 @@ import {
 } from '@ionic/vue';
 
 import { useRouter } from 'vue-router';
+import ChatListComponent from '@/components/ChatListComponent.vue';
 
 const router = useRouter();
 
