@@ -56,8 +56,8 @@
             </ion-grid>
         </ion-content>
 
-        <!-- Modal de notificaciones -->
-       <!-- Modal de notificaciones -->
+        
+       <!-- Modal de notificaciones (popup al pulsar el icono) -->
         <div v-if="showNotificationsModal" class="notifications-modal" @click.self="closeNotificationsModal">
         <div class="modal-content">
             <h3>Notificaciones</h3>

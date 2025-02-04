@@ -2,66 +2,55 @@
     <ion-page>
       <ion-header>
         <ion-toolbar>
+          <IonBackButton></IonBackButton>
           <ion-title>Comentarios</ion-title>
         </ion-toolbar>
       </ion-header>
-  
+      
       <ion-content>
-        <ion-grid>
-          <ion-row>
-            <ion-col>
-              <ion-item>
-                <ion-label position="floating">Escribe un comentario</ion-label>
-                <ion-input type="text" value="Escribe aquí tu comentario..."></ion-input>
-              </ion-item>
-              <ion-button>Enviar</ion-button>
-            </ion-col>
-          </ion-row>
+        <ion-item>
+            <ion-avatar slot="start">
+              <img src="https://ionicframework.com/docs/demos/api/list/avatar-finn.png" alt="Avatar">
+            </ion-avatar>
+            <ion-input type="text" placeholder="Escribe aquí tu comentario sobre el post" class="ion-padding-start"></ion-input>
+        </ion-item>
 
-          <ion-row>
-            <ion-col>
-              <ion-list>
-                <ion-item>
-                  <ion-label>
-                    <h2>Juan</h2>
-                    <p>Este es un comentario de ejemplo</p>
-                  </ion-label>
-                </ion-item>
-                <ion-item>
-                  <ion-label>
-                    <h2>Maria</h2>
-                    <p>Este es otro comentario de ejemplo</p>
-                  </ion-label>
-                </ion-item>
-                <ion-item>
-                  <ion-label>
-                    <h2>Pedro</h2>
-                    <p>Este es un comentario más</p>
-                  </ion-label>
-                </ion-item>
-              </ion-list>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
+        <!-- Zona de comentarios de otros usuarios -->
+
+        <ion-list lines="none">
+          <UserComment
+            avatarSrc="https://ionicframework.com/docs/demos/api/list/avatar-finn.png"
+            name="Finn"
+            text="Este es un ejemplo de comentario"
+          />
+          <UserComment
+            avatarSrc="https://ionicframework.com/docs/demos/api/list/avatar-han.png"
+            name="Han Solo"
+            text="Este es otro ejemplo de comentario"
+          />
+          <!-- Agrega más UserComment según sea necesario -->
+        </ion-list>
+        
       </ion-content>
     </ion-page>
   </template>
   
   <script setup lang="ts">
+
     import { IonPage, 
         IonHeader, 
         IonToolbar, 
         IonTitle, 
         IonContent, 
-        IonGrid, 
-        IonRow, 
-        IonCol, 
-        IonItem, 
-        IonLabel, 
-        IonInput, 
+        IonAvatar,
+        IonItem,
         IonList, 
-        IonButton 
+        IonInput,
+        IonBackButton, 
     } from '@ionic/vue';
+
+    import UserComment from '@/components/UserComment.vue';
+    
   </script>
 
   <style scoped></style>
