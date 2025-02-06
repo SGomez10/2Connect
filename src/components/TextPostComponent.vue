@@ -20,15 +20,16 @@
         <!-- Contenedor para los botones con flexbox para mantenerlos dentro del card -->
         <div class="button-group">
           <ion-button fill="clear">Me gusta</ion-button>
-          <ion-button fill="clear">Comentar</ion-button>
+          <ion-button fill="clear" router-link="/comments">Comentar</ion-button>
           <ion-button fill="clear">Compartir</ion-button>
-          <ion-button fill="clear">Reportar</ion-button>
+          <ion-button fill="clear" @click="showReportAlert">Reportar</ion-button>
         </div>
       </ion-card-content>
     </ion-card>
   </template>
   
   <script setup lang="ts">  
+  import { alertController, toastController } from '@ionic/vue';
   import { 
     IonCard, 
     IonCardHeader, 
@@ -47,6 +48,40 @@
     comments: Number,
     shares: Number
   });
+
+  const showReportAlert = async () => {
+  const alert = await alertController.create({
+    header: 'Reportar contenido',
+    message: '¿Estás seguro de que deseas reportar este contenido?',
+    buttons: [
+      {
+        text: 'Cancelar',
+        role: 'cancel',
+      },
+      {
+        text: 'Reportar',
+        handler: async () => {
+          const confirmAlert = await alertController.create({
+            header: 'Reporte enviado',
+            message: 'El reporte ha sido enviado con éxito.',
+            buttons: [
+              {
+                text: 'Aceptar',
+                handler: () => {
+                  console.log('Reporte confirmado');
+                },
+              },
+            ],
+          });
+          await confirmAlert.present();
+        },
+      },
+    ],
+  });
+
+  await alert.present();
+  };
+
   </script>
   
   <style scoped>

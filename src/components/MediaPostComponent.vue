@@ -12,7 +12,17 @@
       </div>
     </ion-card-header>
     <ion-card-content>
-      <ion-img :src="imageSrc"></ion-img>
+       <!-- Swiper para múltiples imágenes -->
+       <swiper
+        :modules="[Pagination]"
+        :pagination="{ clickable: true }"
+        class="swiper-container">
+
+        <swiper-slide v-for="(img, index) in (Array.isArray(imageSrc) ? imageSrc : [imageSrc]).slice(0, 3)" :key="index">
+          <ion-img :src="img"></ion-img>
+        </swiper-slide>
+      </swiper>
+
       <div class="card-info">
         <p>{{ comments }} Comentarios</p>
         <p>{{ shares }} Compartidos</p>
@@ -21,8 +31,8 @@
       <!-- Contenedor para los botones con flexbox para mantenerlos dentro del card -->
       <div class="button-group">
         <ion-button fill="clear">Me gusta</ion-button>
-        <ion-button fill="clear">Comentar</ion-button>
-        <ion-button fill="clear">Compartir</ion-button>
+        <ion-button fill="clear" router-link="/comments" >Comentar</ion-button>
+        <ion-button fill="clear" >Compartir</ion-button>
         <ion-button fill="clear" @click="showReportAlert">Reportar</ion-button>
       </div>
     </ion-card-content>
@@ -30,7 +40,13 @@
 </template>
 
 <script setup lang="ts">
+
 import { alertController, toastController } from '@ionic/vue';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+import { Pagination } from 'swiper/modules';
 
 import { 
   IonCard, 
@@ -40,14 +56,18 @@ import {
   IonCardSubtitle, 
   IonCardContent, 
   IonImg, 
-  IonButton 
+  IonButton,
+  IonPage,
+  IonContent 
 } from '@ionic/vue';
+
+import { PropType } from 'vue';
 
 const props = defineProps({
   avatarSrc: String,
   nombreUser: String,
   desc: String,
-  imageSrc: String,
+  imageSrc: Array as PropType<string[]>,
   comments: Number,
   shares: Number
 });
@@ -100,6 +120,12 @@ ion-avatar {
   overflow: hidden;
 }
 
+.swiper-slide ion-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que las imágenes se ajusten y no se deformen */
+}
+
 .text-content {
   display: flex;
   flex-direction: column;
@@ -110,6 +136,16 @@ ion-avatar {
   display: flex;
   justify-content: flex-end;
   gap: 10px;
+}
+.swiper-container {
+  width: 100%;
+  height: 250px; /* Ajusta el tamaño según lo necesites */
+}
+
+.swiper-slide ion-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .button-group {

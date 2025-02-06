@@ -7,10 +7,10 @@
                     <ion-button fill="clear" @click="navigateTo('/main')">
                         <ion-icon name="home-outline"></ion-icon>
                     </ion-button>
-                    <ion-button fill="clear" @click="navigateTo('#')">      
+                    <ion-button fill="clear" @click="navigateTo('/friends-menu')">      
                         <ion-icon name="people-outline"></ion-icon>
                     </ion-button>
-                    <ion-button fill="clear" @click="navigateTo('#')">  
+                    <ion-button fill="clear" @click="navigateTo('/my-profile')">  
                         <ion-icon name="person"></ion-icon>
                     </ion-button>
                     <ion-button fill="clear" @click="navigateTo('/chat-menu')">  
@@ -38,7 +38,7 @@
                         avatarSrc="https://ionicframework.com/docs/demos/api/list/avatar-finn.png"
                         nombreUser="Finn"
                         desc="30 de Marzo de 2024 15:36h"
-                        imageSrc="https://ionicframework.com/docs/demos/api/card/madison.jpg"
+                        :imageSrc="['/MediaImages/edificio.jpg', '/MediaImages/puente.jpg', '/MediaImages/mountain.jpg']"
                         :comments="20"
                         :shares="7"
                         /> 
@@ -134,6 +134,18 @@ const closeNotificationsModal = () => {
 </script>
 
 <style scoped>
+
+.swiper-container {
+  width: 100%;
+  height: 250px; /* Altura por defecto */
+}
+
+@media (min-width: 768px) {
+  .swiper-container {
+    height: 180px; /* Reduce la altura en escritorio */
+  }
+}
+
 .scrollable-column {
   height: 100vh;
   overflow: auto;

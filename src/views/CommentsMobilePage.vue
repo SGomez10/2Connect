@@ -2,7 +2,9 @@
     <ion-page>
       <ion-header>
         <ion-toolbar>
-          <IonBackButton></IonBackButton>
+          <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+          </ion-buttons>
           <ion-title>Comentarios</ion-title>
         </ion-toolbar>
       </ion-header>
@@ -46,7 +48,8 @@
         IonItem,
         IonList, 
         IonInput,
-        IonBackButton, 
+        IonBackButton,
+        IonButtons 
     } from '@ionic/vue';
 
     import UserComment from '@/components/UserComment.vue';

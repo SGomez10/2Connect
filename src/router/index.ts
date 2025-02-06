@@ -10,6 +10,8 @@ import MainPage from '@/views/MainPage.vue';
 import NotificationsPage from '@/views/NotificationsPage.vue';
 import CommentsMobilePage from '@/views/CommentsMobilePage.vue';
 import FaqPage from '@/views/FaqPage.vue';
+import FriendsMenuPage from '@/views/FriendsMenuPage.vue';
+import MyProfilePage from '@/views/MyProfilePage.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -66,6 +68,16 @@ const routes: Array<RouteRecordRaw> = [
     path: '/faq',
     name: 'Faq',
     component: FaqPage
+  },
+  {
+    path: '/friends-menu',
+    name: 'FriendsMenu',
+    component: FriendsMenuPage
+  },
+  {
+    path: '/my-profile',
+    name: 'MyProfile',
+    component: MyProfilePage
   }
 
 ]

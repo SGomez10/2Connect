@@ -7,7 +7,6 @@
     </ion-header>
     <ion-content>
       <div class="container">
-        <img src="@/assets/icon2c.png" alt="Logo" class="logo">
         <h1 class="title">2Connect</h1>
         <ion-button>Inicio</ion-button>
       </div>
