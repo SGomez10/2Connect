@@ -9,6 +9,7 @@ import ChatPage from '@/views/ChatPage.vue';
 import MainPage from '@/views/MainPage.vue';
 import NotificationsPage from '@/views/NotificationsPage.vue';
 import CommentsMobilePage from '@/views/CommentsMobilePage.vue';
+import FaqPage from '@/views/FaqPage.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -60,6 +61,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/comments',
     name: 'Comments',
     component: CommentsMobilePage
+  },
+  {
+    path: '/faq',
+    name: 'Faq',
+    component: FaqPage
   }
 
 ]
