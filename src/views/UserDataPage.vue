@@ -2,9 +2,9 @@
     <IonPage>
         <IonHeader>
             <IonToolbar>
-                <slot name="start">
-                    <IonBackButton></IonBackButton>
-                </slot>
+                <ion-buttons slot="start">
+                    <ion-back-button></ion-back-button>
+                </ion-buttons>
                 <IonTitle>Información de usuario</IonTitle>
             </IonToolbar>
         </IonHeader>
@@ -50,7 +50,8 @@ import { IonPage,
     IonCol,
     IonRow,
     IonGrid, 
-    IonBackButton
+    IonBackButton,
+    IonButtons
 } from '@ionic/vue';
 
 import UserConnectionsChart from '@/components/UserConnectionChart.vue';

@@ -38,7 +38,7 @@
                                 <ion-item class="themed-item">
                                     <ion-input label="Confirmar Contraseña" label-placement="floating" type="password" required></ion-input>
                                 </ion-item>
-                                <ion-button type="submit" expand="block" shape="round">Registrar</ion-button>
+                                <ion-button expand="block" shape="round" @click="goToMain">Registrarse</ion-button>
 				                <div class="checkbox-container">
                                     <ion-checkbox></ion-checkbox>
                                      <ion-label>Acepto los términos y condiciones de 2Connect</ion-label>
@@ -67,8 +67,15 @@
         IonItem,
         IonButton,
         IonButtons,
-        IonCheckbox 
+        IonCheckbox,
+        useIonRouter
     } from '@ionic/vue';
+
+    const router = useIonRouter();
+
+    const goToMain = () => {
+    router.push('/edit-profile');
+};
 
 </script>
 

@@ -10,7 +10,7 @@
             </ion-toolbar>
         </ion-header>
 
-        <ion-content :fullscreen="true" class="ion-padding-top">
+        <ion-content class="ion-padding">
 
             <strong class="margin-text">Editar perfil</strong>
             <div class="themed-item">
@@ -27,6 +27,7 @@
                 <p>En esta sección puedes añadir fotografías para </p>
             </div>
 
+            <ion-button expand="block" color="primary" class="ion-margin-top" shape="round" @click="navigateTo('/my-profile')">Guardar cambios</ion-button>
 
         </ion-content>
 
@@ -46,8 +47,16 @@ import {
     IonButtons,
     IonImg,
     IonItem,
-    IonTextarea
+    IonTextarea,
+    IonButton
 } from '@ionic/vue';
+
+import { useRouter } from 'vue-router';
+const router = useRouter();
+
+const navigateTo = (path: string) => {
+    router.push(path);
+}
 </script>
 
 

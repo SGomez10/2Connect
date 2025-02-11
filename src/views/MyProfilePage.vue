@@ -4,7 +4,7 @@
         <IonMenu content-id="main-content" side="end">
             <IonContent>
                 <ion-list>
-                    <ion-item button @click="navigateTo('/stats')">Mis Estadísticas</ion-item>
+                    <ion-item button @click="navigateTo('/user-data')">Mis Estadísticas</ion-item>
                     <ion-item button @click="navigateTo('/help')">Ayuda</ion-item>
                     <ion-item button @click="navigateTo('/faq')">Preguntas Frecuentes</ion-item>
                     <ion-item button @click="logout">Log Out</ion-item>
@@ -49,7 +49,7 @@
                 </ion-col>
                 <ion-col>
                     <h2 style="margin: 0;">Nombre de Usuario</h2>
-                    <ion-button fill="outline" size="small">Editar perfil</ion-button>
+                    <ion-button fill="outline" size="small" @click="navigateTo('/edit-profile')">Editar perfil</ion-button>
                 </ion-col>
             </ion-row>
                 <ion-row>
@@ -59,7 +59,7 @@
                         <p class="outlined-text">Aquí se mostrarán tus aficiones.</p>
                     </ion-col>
 
-                    <!-- Zona de posteo-->
+                    <!-- Biografia -->
                     <ion-col size="12" size-md="6">
                         <h3>Biografia</h3>
                         <p class="outlined-text">Sample text.</p>
@@ -67,22 +67,18 @@
 
                     <!-- Fotos-->
                     <ion-col size="12" size-md="6"> 
-
-                    </ion-col>
-
-                    <!-- Biografia -->
-                    <ion-col size="12" size-md="6">
-
-                    </ion-col>
-
-                    <!-- Mis posts-->
-                    <ion-col size="12" size-md="6">
-
+                        <h3>Fotos</h3>
+                        <swiper :slides-per-view="1" :pagination="{ clickable: true }">
+                            <swiper-slide v-for="(image, index) in images" :key="index">
+                                <img :src="image" alt="Foto" style="width: 100%; border-radius: 8px;">
+                            </swiper-slide>
+                        </swiper>
                     </ion-col>
 
                     <!-- Extras-->
                     <ion-col size="12" size-md="6">
-
+                        <h3>Extras</h3>
+                        <p class="outlined-text">información extra a añadir por el user.</p>
                     </ion-col>
                 </ion-row>
         </IonContent>
@@ -110,6 +106,9 @@ import {
 
 import { useRouter } from 'vue-router';
 import { ref } from 'vue';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 const router = useRouter();
 const showNotificationsModal = ref(false);
@@ -134,6 +133,15 @@ const logout = () => {
     console.log('Cerrando sesión...');
     router.push('/login');
 }
+
+const images = ref([
+    '/../public/MediaImages/ciudad-puente.jpg',
+    '/../public/MediaImages/estanteria-libros.jpg',
+    '/../public/MediaImages/pareja.jpg',
+    '/../public/MediaImages/buhda.jpg',
+    '/../public/MediaImages/templo-selva.jpg',
+    '/../public/MediaImages/froze-forest.jpg',
+]);
 
 </script>
 

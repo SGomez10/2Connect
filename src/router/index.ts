@@ -18,7 +18,7 @@ import AnonProfilePage from '@/views/AnonProfilePage.vue';
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: '/home'
+    redirect: '/login'
   },
   {
     path: '/home',
