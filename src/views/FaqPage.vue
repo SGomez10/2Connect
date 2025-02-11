@@ -1,8 +1,10 @@
 <template>
     <IonPage>
-        <ion-header :translucent="true">
+        <ion-header>
             <ion-toolbar>
-                <IonBackButton></IonBackButton>
+                <ion-buttons slot="start">
+                    <ion-back-button></ion-back-button>
+                </ion-buttons>
                 <ion-title>FAQ</ion-title>
             </ion-toolbar>
         </ion-header>
@@ -49,7 +51,8 @@ import { IonPage,
     IonLabel,
     IonItem, 
     IonBackButton,
-    IonSearchbar
+    IonSearchbar,
+    IonButtons
 } from '@ionic/vue';
 
 </script>

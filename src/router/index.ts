@@ -12,6 +12,8 @@ import CommentsMobilePage from '@/views/CommentsMobilePage.vue';
 import FaqPage from '@/views/FaqPage.vue';
 import FriendsMenuPage from '@/views/FriendsMenuPage.vue';
 import MyProfilePage from '@/views/MyProfilePage.vue';
+import UserDataPage from '@/views/UserDataPage.vue';
+import AnonProfilePage from '@/views/AnonProfilePage.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -78,6 +80,16 @@ const routes: Array<RouteRecordRaw> = [
     path: '/my-profile',
     name: 'MyProfile',
     component: MyProfilePage
+  },
+  {
+    path: '/user-data',
+    name: 'UserData',
+    component: UserDataPage
+  },
+  {
+    path: '/friend-profile',
+    name: 'FriendProfile',
+    component: AnonProfilePage
   }
 
 ]

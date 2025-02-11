@@ -9,7 +9,8 @@ import { sendOutline,
   person, 
   chatboxEllipsesOutline, 
   homeOutline,
-  notificationsOutline 
+  notificationsOutline,
+  menuOutline, 
 } from 'ionicons/icons';
 
 /* Core CSS required for Ionic components to work properly */
@@ -48,7 +49,8 @@ addIcons({
   'person': person,
   'chatbox-ellipses-outline': chatboxEllipsesOutline,
   'home-outline': homeOutline,
-  'notifications-outline': notificationsOutline
+  'notifications-outline': notificationsOutline,
+  'menu-outline': menuOutline
 });
 
 const app = createApp(App)

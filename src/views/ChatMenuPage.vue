@@ -6,10 +6,10 @@
                     <ion-button fill="clear" @click="navigateTo('/main')">
                         <ion-icon name="home-outline"></ion-icon>
                     </ion-button>
-                    <ion-button fill="clear" @click="navigateTo('#')">      <!-- Menú Amigos -->
+                    <ion-button fill="clear" @click="navigateTo('/friends-menu')"> <!-- Menú Amigos -->
                         <ion-icon name="people-outline"></ion-icon>
                     </ion-button>
-                    <ion-button fill="clear" @click="navigateTo('#')">  <!-- Mi perfil -->
+                    <ion-button fill="clear" @click="navigateTo('/my-profile')">  <!-- Mi perfil -->
                         <ion-icon name="person"></ion-icon>
                     </ion-button>
                     <ion-button fill="clear" @click="navigateTo('/chat-menu')">  <!-- Mensajes -->
