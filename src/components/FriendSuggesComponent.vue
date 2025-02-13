@@ -1,62 +1,62 @@
 <template>
-    <div class="avatar-container">
-      <div class="avatar-and-name">
-        <ion-avatar>
-          <img src="https://via.placeholder.com/150" alt="Avatar">
-        </ion-avatar>
-        <span class="name">{{ name }}</span>
-      </div>
-      <div class="buttons">
-        <ion-button @click="onAddFriendClick">Enviar solicitud</ion-button>
-        <ion-button @click="onSuprimirClick">Suprimir</ion-button>
-      </div>
-    </div>
-  </template>
+    <ion-item class="c-bg">
+      <ion-avatar slot="start">
+        <img :src="avatarSrc" />
+      </ion-avatar>
+      <ion-label class="c-bg">
+        <h2>{{ name }}</h2>
+        <div class="button-container">
+          <ion-button @click="showAlertFriend('Si el usuario la acepta, aparecerá en tu lista de amigos')">Enviar Solicitud</ion-button>
+          <ion-button @click="showAlertIgnore('No volveremos a mostrar a esta persona en tu lista de sugerencias')">Suprimir</ion-button>
+        </div>
+      </ion-label>
+    </ion-item>
+</template>
+
+<script setup lang="ts">
+import { alertController } from '@ionic/vue';
+
+const props = defineProps({
   
-  <script setup lang="ts">
-  import { IonAvatar, IonButton } from '@ionic/vue';
-  
-  // Definir las props con TypeScript
-  const props = defineProps<{
-    name: string;
-  }>();
-  
-  // Métodos para manejar los clics de los botones
-  const onAddFriendClick = () => {
-    alert("Solicitud de amistad enviada");
-  };
-  
-  const onSuprimirClick = () => {
-    alert("Se ha suprimido esta sugerencia");
-  };
-  </script>
-  
-  <style scoped>
-  .avatar-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  avatarSrc: {
+    type: String,
+    required: true
+  },
+  name: {
+    type: String,
+    required: true
   }
-  
-  .avatar-and-name {
-    display: flex;
-    align-items: center;
-    margin-bottom: 16px;
-  }
-  
-  .avatar-and-name ion-avatar {
-    margin-right: 8px;
-  }
-  
-  .name {
-    font-size: 1.2em;
-    font-weight: bold;
-  }
-  
-  .buttons {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-  }
-  </style>
+});
+
+const showAlertFriend = async (message: string) => {
+  const alert = await alertController.create({
+    header: 'Solicitud de amistad enviada',
+    message,
+    buttons: ['OK']
+  });
+  await alert.present();
+};
+
+const showAlertIgnore = async (message: string) => {
+  const alert = await alertController.create({
+    header: 'Se ha suprimido esta sugerencia',
+    message,
+    buttons: ['OK']
+  });
+  await alert.present();
+};
+</script>
+
+<style scoped>
+.no-underline {
+  text-decoration: none;
+}
+.c-bg {
+  --background: var(--ion-background-color);
+}
+.button-container {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+</style>

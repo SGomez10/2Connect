@@ -34,17 +34,28 @@
                             </div>
 
                             <h3>Personas que quizás conozcas:</h3>
-                            <ion-list class="bg-transparent">
+                            <ion-list class="bg-transparent" lines="none">
                                 <!-- Lista de usuarios sugeridos-->
-                                 <FriendSuggesComponent name="Alvaro" />
+                                 <FriendSuggesComponent avatar-src="https://ionicframework.com/docs/demos/api/list/avatar-han.png" name="Han Solo" />
+                                 <FriendSuggesComponent avatar-src="https://ionicframework.com/docs/demos/api/list/avatar-leia.png" name="Leia Organa" />
+                                 <FriendSuggesComponent avatar-src="https://ionicframework.com/docs/demos/api/list/avatar-luke.png" name="Luke Skywalker" />
+                                 <FriendSuggesComponent avatar-src="https://ionicframework.com/docs/demos/api/list/avatar-finn.png" name="Finn" />
                             </ion-list>
                         </IonCol>
 
                         <!-- Columna que solo se muestra en modo desktop -->
                         <IonCol class="ion-hide-md-down" size="12">
-                            <p>Esta columna solo se ve en modo desktop.</p>
-                        </IonCol>
 
+                            <h3>Solicitudes de amistad:</h3>
+                            <ion-list class="bg-transparent" lines="none">
+                                
+                            </ion-list>
+
+                            <h3>Sugerencias de amistad:</h3>
+                            <ion-list class="bg-transparent" lines="none">
+                                
+                            </ion-list>
+                        </IonCol>
                     </IonRow>
                 </IonGrid>
         </IonContent>
@@ -65,7 +76,7 @@ import {
     IonRow,
     IonCol,
     IonList,
-    IonItem
+    
 } from '@ionic/vue';
 
 import { useRouter } from 'vue-router';
