@@ -47,13 +47,16 @@
                         <IonCol class="ion-hide-md-down" size="12">
 
                             <h3>Solicitudes de amistad:</h3>
-                            <ion-list class="bg-transparent" lines="none">
+                            <ion-list class="bg-transparent horizontal-list" lines="none">
                                 
                             </ion-list>
 
                             <h3>Sugerencias de amistad:</h3>
-                            <ion-list class="bg-transparent" lines="none">
-                                
+                            <ion-list class="bg-transparent horizontal-list" lines="none">
+                                <FriendSuggestDesktopComponent image-src="https://ionicframework.com/docs/demos/api/list/avatar-han.png" title="Han solo"/>
+                                <FriendSuggestDesktopComponent image-src="https://ionicframework.com/docs/demos/api/list/avatar-leia.png" title="Leia Organa"/>
+                                <FriendSuggestDesktopComponent image-src="https://ionicframework.com/docs/demos/api/list/avatar-luke.png" title="Luke Skywalker"/>
+                                <FriendSuggestDesktopComponent image-src="https://ionicframework.com/docs/demos/api/list/avatar-finn.png" title="Finn"/>
                             </ion-list>
                         </IonCol>
                     </IonRow>
@@ -82,6 +85,7 @@ import {
 import { useRouter } from 'vue-router';
 import { ref } from 'vue';
 import FriendSuggesComponent from '@/components/FriendSuggesComponent.vue';
+import FriendSuggestDesktopComponent from '@/components/FriendSuggestDesktopComponent.vue';
 
 const router = useRouter();
 const showNotificationsModal = ref(false);
@@ -125,6 +129,19 @@ const closeNotificationsModal = () => {
 
     .bg-transparent {
     background: transparent;
+    }
+
+    .horizontal-list {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto; /* Permite hacer scroll si hay muchos elementos */
+        white-space: nowrap; /* Evita el salto de línea */
+        gap: 10px; /* Espaciado entre elementos */
+        padding: 10px 0; /* Añade espacio en los bordes */
+    }
+
+    .horizontal-list::-webkit-scrollbar {
+        display: none; /* Oculta la barra de desplazamiento en navegadores WebKit */
     }
 
 </style>
