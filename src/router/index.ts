@@ -14,6 +14,9 @@ import FriendsMenuPage from '@/views/FriendsMenuPage.vue';
 import MyProfilePage from '@/views/MyProfilePage.vue';
 import UserDataPage from '@/views/UserDataPage.vue';
 import AnonProfilePage from '@/views/AnonProfilePage.vue';
+import FriendPage from '@/views/FriendPage.vue';
+import FriendRequestMobilePage from '@/views/FriendRequestMobilePage.vue';
+import HelpPage from '@/views/HelpPage.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -90,6 +93,21 @@ const routes: Array<RouteRecordRaw> = [
     path: '/friend-profile',
     name: 'FriendProfile',
     component: AnonProfilePage
+  },
+  {
+    path: '/friend-request',
+    name: 'FriendRequest',
+    component: FriendRequestMobilePage
+  },
+  {
+    path: '/friends/',
+    name: 'Friend',
+    component: FriendPage
+  },
+  {
+    path: '/help',
+    name: 'Help',
+    component: HelpPage
   }
 
 ]

@@ -29,8 +29,8 @@
                         <IonCol class="ion-hide-lg-up" size="12">
                             <h3>Amigos</h3>
                             <div class="horizontal-buttons">
-                                <IonButton class="button-item">Solicitudes de amistad</IonButton>
-                                <IonButton class="button-item">Tus amigos</IonButton>
+                                <IonButton class="button-item" @click="navigateTo('/friend-request')">Solicitudes de amistad</IonButton>
+                                <IonButton class="button-item" @click="navigateTo('/friends')">Tus amigos</IonButton>
                             </div>
 
                             <h3>Personas que quizás conozcas:</h3>
@@ -53,10 +53,18 @@
 
                             <h3>Sugerencias de amistad:</h3>
                             <ion-list class="bg-transparent horizontal-list" lines="none">
-                                <FriendSuggestDesktopComponent image-src="https://ionicframework.com/docs/demos/api/list/avatar-han.png" title="Han solo"/>
-                                <FriendSuggestDesktopComponent image-src="https://ionicframework.com/docs/demos/api/list/avatar-leia.png" title="Leia Organa"/>
-                                <FriendSuggestDesktopComponent image-src="https://ionicframework.com/docs/demos/api/list/avatar-luke.png" title="Luke Skywalker"/>
-                                <FriendSuggestDesktopComponent image-src="https://ionicframework.com/docs/demos/api/list/avatar-finn.png" title="Finn"/>
+                                <ion-item class="no-padding">
+                                    <FriendSuggestDesktopComponent image-src="https://ionicframework.com/docs/demos/api/list/avatar-han.png" title="Han Solo"/>
+                                </ion-item>
+                                <ion-item class="no-padding">
+                                    <FriendSuggestDesktopComponent image-src="https://ionicframework.com/docs/demos/api/list/avatar-leia.png" title="Leia Organa"/>
+                                </ion-item>
+                                <ion-item class="no-padding">
+                                    <FriendSuggestDesktopComponent image-src="https://ionicframework.com/docs/demos/api/list/avatar-luke.png" title="Luke Skywalker"/>
+                                </ion-item>
+                                <ion-item class="no-padding">
+                                    <FriendSuggestDesktopComponent image-src="https://ionicframework.com/docs/demos/api/list/avatar-finn.png" title="Finn"/>
+                                </ion-item>
                             </ion-list>
                         </IonCol>
                     </IonRow>
@@ -79,7 +87,7 @@ import {
     IonRow,
     IonCol,
     IonList,
-    
+    IonItem
 } from '@ionic/vue';
 
 import { useRouter } from 'vue-router';
@@ -110,7 +118,6 @@ const closeNotificationsModal = () => {
 
 
 <style scoped>
-
 
 /* Estilos para la lista de botones horizontal */
 

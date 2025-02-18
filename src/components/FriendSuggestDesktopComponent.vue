@@ -52,10 +52,7 @@
     padding: 10px;
     border-radius:10px;
     margin: 0 auto; /* Centra la tarjeta */
-    outline: 1px solid #ffffff; /* Color y grosor del outline */
-    outline-offset: 3px; /* Espaciado entre el borde y el outline */
   }
-
 
   ion-img {
     width: 150px; /* Ajusta según lo que necesites */
