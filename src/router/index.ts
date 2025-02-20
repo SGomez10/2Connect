@@ -17,6 +17,7 @@ import AnonProfilePage from '@/views/AnonProfilePage.vue';
 import FriendPage from '@/views/FriendPage.vue';
 import FriendRequestMobilePage from '@/views/FriendRequestMobilePage.vue';
 import HelpPage from '@/views/HelpPage.vue';
+import PostPage from '@/views/UserPostPage.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -108,6 +109,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/help',
     name: 'Help',
     component: HelpPage
+  },
+  {
+    path: '/post',
+    name: 'Post',
+    component: PostPage
   }
 
 ]
