@@ -33,7 +33,7 @@
                 <ion-col>
                     <h2 style="margin: 0;">Fren</h2>
                     <ion-button fill="outline" size="small"  @click="navigateTo('/chat/1')">Enviar mensaje</ion-button>
-                    <ion-button fill="outline" size="small">Eliminar de amigos</ion-button>
+                    <ion-button fill="outline" size="small"  @click="showAlert">Eliminar de amigos</ion-button>
                 </ion-col>
             </ion-row>
                 <ion-row>
@@ -67,6 +67,13 @@
                 </ion-row>
         </IonContent>
     </IonPage>
+    <ion-alert
+        :is-open="isAlertOpen"
+        header="Aviso"
+        message="Se ha eliminado este usuario de tus amigos"
+        buttons="OK"
+        @didDismiss="isAlertOpen = false"
+    ></ion-alert>
 </template>
 
 <script setup lang="ts">
@@ -81,7 +88,8 @@
         IonIcon,
         IonRow,
         IonCol,
-        IonAvatar
+        IonAvatar,
+        IonAlert
     } from '@ionic/vue';
 
     import { useRouter } from 'vue-router';
@@ -105,6 +113,11 @@
         }
     };
 
+    const isAlertOpen = ref(false);
+
+    function showAlert() {
+        isAlertOpen.value = true;
+    }
     const closeNotificationsModal = () => {
         showNotificationsModal.value = false;
     };

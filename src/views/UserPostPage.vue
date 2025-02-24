@@ -39,15 +39,26 @@
                 Donec pellentesque non enim et mollis. Aenean laoreet nunc magna, at sagittis quam rutrum eu. 
               </p>
               <div class="buttons-container">
-                <ion-button expand="block" fill="outline">Me gusta</ion-button>
-                <ion-button expand="block" fill="outline">Compartir</ion-button>
+                <ion-button expand="block" fill="outline" class="flex-button">Me gusta</ion-button>
+                <ion-button expand="block" fill="outline" class="flex-button">Compartir</ion-button>
               </div>
               <div class="comments-container">
                 <h3>Comentarios</h3>
                 <ion-list class="no-lines bg-transparent">
                   <UserComment avatarSrc="https://ionicframework.com/docs/demos/api/list/avatar-finn.png" name="Finn" text="Este es un ejemplo de comentario" />
                   <UserComment avatarSrc="https://ionicframework.com/docs/demos/api/list/avatar-han.png" name="Han Solo" text="Este es otro ejemplo de comentario" />
+                  <UserComment avatarSrc="https://ionicframework.com/docs/demos/api/list/avatar-luke.png" name="Luke Skywalker" text="Este es otro ejemplo de comentario" />
+                  <UserComment avatarSrc="https://ionicframework.com/docs/demos/api/list/avatar-leia.png" name="Leia Organa" text="Este es otro ejemplo de comentario" />
+                  <UserComment avatarSrc="https://ionicframework.com/docs/demos/api/list/avatar-rey.png" name="Rey" text="Este es otro ejemplo de comentario" />                 
                 </ion-list>  
+              </div>
+              <div class="response-zone">
+                <ion-item>
+                    <ion-avatar slot="start">
+                      <img src="https://ionicframework.com/docs/demos/api/list/avatar-finn.png" alt="Avatar">
+                    </ion-avatar>
+                    <ion-input type="text" placeholder="Escribe aquí tu comentario sobre el post" class="ion-padding-start" autocorrect="on"></ion-input>
+                </ion-item>
               </div>
             </ion-col>
           </ion-row>
@@ -72,7 +83,8 @@
     IonRow,
     IonCol,
     IonButton,
-    IonList 
+    IonList,
+    IonInput 
   } from '@ionic/vue';
   import { Swiper, SwiperSlide } from 'swiper/vue';
   import 'swiper/css';
@@ -97,6 +109,12 @@
   </script>
   
   <style scoped>
+
+    .fixed-size-img {
+      width: 100%;
+      height: 300px; /* Ajusta la altura según tus necesidades */
+      object-fit: cover; /* Esto asegura que la imagen se recorte para llenar el contenedor */
+    }
     img {
       cursor: pointer;
     }
@@ -122,6 +140,24 @@
 
     .bg-transparent {
       background: transparent;
+    }
+
+    .buttons-container {
+      display: flex;
+      gap: 10px;
+      border-top: 2px solid #8b8b8b;
+      border-bottom: 2px solid #8b8b8b;
+      padding: 10px 0;
+    }
+    .flex-button {
+      flex-grow: 1;
+    }
+    .response-zone {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 10px;
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Añade una sombra para separar visualmente */
     }
   </style>
   

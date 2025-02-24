@@ -1,10 +1,7 @@
 <template>
     <ion-page>
-        <ion-header :translucent="true">
+        <ion-header>
             <ion-toolbar>
-                <ion-buttons slot="start">
-                    <ion-img src="@/assets/icon.png" alt="App Icon" style="width: 30px; height: 30px; margin-left: 10px;"></ion-img>
-                </ion-buttons>
                 <ion-title>2Connect</ion-title>
             </ion-toolbar>
         </ion-header>

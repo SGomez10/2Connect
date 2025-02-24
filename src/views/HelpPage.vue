@@ -46,6 +46,30 @@
                     </ion-item>
                     <div class="ion-padding" slot="content">Tutorial 3</div>
                 </ion-accordion>
+                <ion-accordion value="fourth">
+                    <ion-item slot="header" color="light">
+                        <ion-label>Cómo crear un post</ion-label>
+                    </ion-item>
+                    <div class="ion-padding" slot="content">Tutorial 4</div>
+                </ion-accordion>
+                <ion-accordion value="fifth">
+                    <ion-item slot="header" color="light">
+                        <ion-label>Cómo eliminar un post</ion-label>
+                    </ion-item>
+                    <div class="ion-padding" slot="content">Tutorial 5</div>
+                </ion-accordion>
+                <ion-accordion value="sixth">
+                    <ion-item slot="header" color="light">
+                        <ion-label>Cómo eliminar a una persona de amigos</ion-label>
+                    </ion-item>
+                    <div class="ion-padding" slot="content">Tutorial 6</div>
+                </ion-accordion>
+                <ion-accordion value="seventh">
+                    <ion-item slot="header" color="light">
+                        <ion-label>Cómo compartir un post</ion-label>
+                    </ion-item>
+                    <div class="ion-padding" slot="content">Tutorial 7</div>
+                </ion-accordion>
             </ion-accordion-group>
         </IonContent>
         

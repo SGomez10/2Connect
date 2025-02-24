@@ -3,7 +3,7 @@
         <ion-header>
             <ion-toolbar>
                 <ion-buttons slot="start">
-                    <ion-back-button></ion-back-button>
+                    <ion-back-button defaultHref="/friends-menu"></ion-back-button>
                 </ion-buttons>
                 <ion-title>Chat Privado</ion-title>
             </ion-toolbar>
