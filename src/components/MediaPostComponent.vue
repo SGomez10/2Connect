@@ -1,42 +1,42 @@
 <template>
-  <ion-card>
-    <ion-card-header>
-      <div class="header-content">
-        <ion-avatar>
-          <img :src="avatarSrc" alt="Avatar">
-        </ion-avatar>
-        <div class="text-content">
-          <ion-card-title>{{ nombreUser }}</ion-card-title>
-          <ion-card-subtitle>{{ desc }}</ion-card-subtitle>
-        </div>
+<ion-card>
+  <ion-card-header @click="irAUsuario" style="cursor: pointer;">
+    <div class="header-content">
+      <ion-avatar>
+        <img :src="avatarSrc" alt="Avatar">
+      </ion-avatar>
+      <div class="text-content">
+        <ion-card-title>{{ nombreUser }}</ion-card-title>
+        <ion-card-subtitle>{{ desc }}</ion-card-subtitle>
       </div>
-    </ion-card-header>
-    <ion-card-content>
-       <!-- Swiper para múltiples imágenes -->
-       <swiper
-        :modules="[Pagination]"
-        :pagination="{ clickable: true }"
-        class="swiper-container">
+    </div>
+  </ion-card-header>
 
-        <swiper-slide v-for="(img, index) in (Array.isArray(imageSrc) ? imageSrc : [imageSrc]).slice(0, 3)" :key="index">
-          <ion-img :src="img"></ion-img>
-        </swiper-slide>
-      </swiper>
+  <ion-card-content @click="irAPost" style="cursor: pointer;">
+    <!-- Swiper para múltiples imágenes -->
+    <swiper
+      :modules="[Pagination]"
+      :pagination="{ clickable: true }"
+      class="swiper-container">
+      <swiper-slide v-for="(img, index) in (Array.isArray(imageSrc) ? imageSrc : [imageSrc]).slice(0, 3)" :key="index">
+        <ion-img :src="img"></ion-img>
+      </swiper-slide>
+    </swiper>
 
-      <div class="card-info">
-        <p>{{ comments }} Comentarios</p>
-        <p>{{ shares }} Compartidos</p>
-      </div>
-      
-      <!-- Contenedor para los botones con flexbox para mantenerlos dentro del card -->
-      <div class="button-group">
-        <ion-button fill="clear">Me gusta</ion-button>
-        <ion-button fill="clear" router-link="/comments" >Comentar</ion-button>
-        <ion-button fill="clear" >Compartir</ion-button>
-        <ion-button fill="clear" @click="showReportAlert">Reportar</ion-button>
-      </div>
-    </ion-card-content>
-  </ion-card>
+    <div class="card-info">
+      <p>{{ comments }} Comentarios</p>
+      <p>{{ shares }} Compartidos</p>
+    </div>
+
+    <!-- Contenedor para los botones -->
+    <div class="button-group">
+      <ion-button fill="clear" @click.stop>Me gusta</ion-button>
+      <ion-button fill="clear" router-link="/comments" @click.stop>Comentar</ion-button>
+      <ion-button fill="clear" @click.stop>Compartir</ion-button>
+      <ion-button fill="clear" @click="showReportAlert" @click.stop>Reportar</ion-button>
+    </div>
+  </ion-card-content>
+</ion-card>
 </template>
 
 <script setup lang="ts">
@@ -104,6 +104,27 @@ const showReportAlert = async () => {
 
   await alert.present();
   };
+
+  import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+const irAUsuario = () => {
+  router.push('/friend-profile'); // Redirige a la página de perfil del usuario
+};
+
+const esMovil = () => {
+  return window.innerWidth <= 768; // Se considera móvil si el ancho es menor o igual a 768px
+};
+
+const irAPost = () => {
+  if (esMovil()) {
+    router.push('/post-mobile'); // Redirigir a la versión móvil
+  } else {
+    router.push('/post'); // Redirigir a la versión de escritorio
+  }
+};
+
 </script>
 
 <style scoped>

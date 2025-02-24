@@ -19,7 +19,7 @@
 
         <!-- Zona de comentarios de otros usuarios -->
 
-        <ion-list lines="none">
+        <ion-list lines="none" class="bg-transparent">
           <UserComment
             avatarSrc="https://ionicframework.com/docs/demos/api/list/avatar-finn.png"
             name="Finn"
@@ -56,4 +56,10 @@
     
   </script>
 
-  <style scoped></style>
+  <style scoped>
+
+    .bg-transparent {
+      background: transparent;
+    }
+  
+  </style>

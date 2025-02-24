@@ -38,6 +38,17 @@
                 Aenean mauris magna, ultricies ut consectetur a, venenatis in dolor. Cras rutrum nulla commodo nunc eleifend aliquet.
                 Donec pellentesque non enim et mollis. Aenean laoreet nunc magna, at sagittis quam rutrum eu. 
               </p>
+              <div class="buttons-container">
+                <ion-button expand="block" fill="outline">Me gusta</ion-button>
+                <ion-button expand="block" fill="outline">Compartir</ion-button>
+              </div>
+              <div class="comments-container">
+                <h3>Comentarios</h3>
+                <ion-list class="no-lines bg-transparent">
+                  <UserComment avatarSrc="https://ionicframework.com/docs/demos/api/list/avatar-finn.png" name="Finn" text="Este es un ejemplo de comentario" />
+                  <UserComment avatarSrc="https://ionicframework.com/docs/demos/api/list/avatar-han.png" name="Han Solo" text="Este es otro ejemplo de comentario" />
+                </ion-list>  
+              </div>
             </ion-col>
           </ion-row>
         </ion-grid>
@@ -59,14 +70,17 @@
     IonAvatar,
     IonGrid,
     IonRow,
-    IonCol 
+    IonCol,
+    IonButton,
+    IonList 
   } from '@ionic/vue';
   import { Swiper, SwiperSlide } from 'swiper/vue';
   import 'swiper/css';
   import 'swiper/css/pagination';
   import 'swiper/css/navigation';
   import { Pagination, Navigation } from 'swiper/modules';
-  
+  import UserComment from '@/components/UserComment.vue';
+
   const showSwiper = ref(false);
   const currentIndex = ref(0);
   const images = ref([
@@ -83,27 +97,31 @@
   </script>
   
   <style scoped>
-  img {
-    cursor: pointer;
-  }
-  
-  /* Ajusta la alineación del avatar y los textos */
-  .custom-item {
-    display: flex;
-    align-items: center;
-  }
-  
-  /* Asegura que los textos estén alineados correctamente */
-  .text-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 10px;
-  }
-  
-  /* Separa el párrafo del ion-item */
-  .description {
-    margin-top: 10px;
-  }
+    img {
+      cursor: pointer;
+    }
+    
+    /* Ajusta la alineación del avatar y los textos */
+    .custom-item {
+      display: flex;
+      align-items: center;
+    }
+    
+    /* Asegura que los textos estén alineados correctamente */
+    .text-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-left: 10px;
+    }
+    
+    /* Separa el párrafo del ion-item */
+    .description {
+      margin-top: 10px;
+    }
+
+    .bg-transparent {
+      background: transparent;
+    }
   </style>
   

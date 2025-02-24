@@ -18,6 +18,7 @@ import FriendPage from '@/views/FriendPage.vue';
 import FriendRequestMobilePage from '@/views/FriendRequestMobilePage.vue';
 import HelpPage from '@/views/HelpPage.vue';
 import PostPage from '@/views/UserPostPage.vue';
+import UserPostMobilePage from '@/views/UserPostMobilePage.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -114,8 +115,12 @@ const routes: Array<RouteRecordRaw> = [
     path: '/post',
     name: 'Post',
     component: PostPage
+  },
+  {
+    path: '/post-mobile',
+    name: 'PostMobile',
+    component: UserPostMobilePage
   }
-
 ]
 
 const router = createRouter({

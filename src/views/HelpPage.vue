@@ -17,21 +17,34 @@
             <ion-accordion-group>
                 <ion-accordion value="first">
                     <ion-item slot="header" color="light">
-                        <ion-label>Cómo crear una cuenta 2Connect</ion-label>
+                        <ion-label>Cómo enviar un mensaje privado</ion-label>
                     </ion-item>
-                    <div class="ion-padding" slot="content">First Content</div>
+                    <div class="ion-padding" slot="content">
+                        <h3>Instrucciones para crear enviar un mensaje privado</h3>
+                        <p>En esta guía te vamos a enseñar paso a paso como poder enviar un mensaje privado a cualquier persona que tengas agregada en tu lista de amigos.</p>
+                        <h4>1. Acceder al menú de amigos</h4>
+                        <p>Des de el menú principal, vamos a buscar en la barra superior el icono de amigos, que es el segundo icono desde la izquierda, y lo vamos a pulsar. Te marcaremos el botón a continuación</p>
+                        <ion-icon name="people-outline"></ion-icon>
+                        <h4>2. Buscar tu lista de amigos</h4>
+                        <p>Dentro del menú, vamos a ver unos botones que se pueden desplazar arrastrando hacia los lados. Vamos a arrastrar hasta encontrar el botón que pone “Tus amigos”. Te mostraremos como se ve a continuación</p>
+                        <h4>3. Selecciona alguien de la lista</h4>
+                        <p>Dentro de “Tus amigos” va a aparecer una lista de todas las personas que tienes agregadas. Una vez hayas encontrado a la persona que escribir, debes pulsar el botón de la derecha del todo. Te vamos a mostrar cuál es a continuación</p>
+                        <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+                        <h4>4. Escribe tu mensaje</h4>
+                        <p>Una vez pulsado, estarás dentro de la sala de chat privada con tu contacto deseado. En la parte inferior de la pantalla habrá una barra blanca la cual al clicar te abrirá el teclado para poder escribir. Una vez abierto puedes escribir lo que quieras y mandárselo a tu amigo/a. ¡Con eso, ya sabes escribir a tus amigos!</p>
+                    </div>
                 </ion-accordion>
                 <ion-accordion value="second">
                     <ion-item slot="header" color="light">
                         <ion-label>Cómo eliminar mi cuenta 2Connect</ion-label>
                     </ion-item>
-                    <div class="ion-padding" slot="content">Second Content</div>
+                    <div class="ion-padding" slot="content">Tutorial 2</div>
                 </ion-accordion>
                 <ion-accordion value="third">
                     <ion-item slot="header" color="light">
                         <ion-label>Cómo añadir amigos</ion-label>
                     </ion-item>
-                    <div class="ion-padding" slot="content">Third Content</div>
+                    <div class="ion-padding" slot="content">Tutorial 3</div>
                 </ion-accordion>
             </ion-accordion-group>
         </IonContent>

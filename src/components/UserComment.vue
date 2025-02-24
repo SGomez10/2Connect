@@ -1,9 +1,9 @@
 <template>
-    <ion-item class="custom-item">
+    <ion-item class="custom-item bg-transparent" lines="none">
       <ion-avatar slot="start">
         <img :src="avatarSrc" alt="Avatar" />
       </ion-avatar>
-      <div class="content-box">
+      <div class="content-box bg-transparent">
         <h3>{{ name }}</h3>
         <p>{{ text }}</p>
       </div>
@@ -22,14 +22,14 @@
   
   <style scoped>
   .custom-item {
-    --background: transparent;
+    background: transparent !important;
     display: flex;
     align-items: center;
   }
 
   /* Fondo del recuadro en modo oscuro */
   .content-box {
-    background: #252525; /* Gris oscuro para mejor contraste */
+    background: transparent !important;
     padding: 12px;
     border-radius: 10px;
     display: flex;
@@ -40,15 +40,15 @@
   }
 
   ion-item {
-    --background: #333;
-    --color: #fff;
+    background: transparent !important;
     margin-top: 10px;
   }
 
-  ion-list {
-    margin-top: 10px;
+  .bg-transparent {
+    background: transparent;
   }
-  
+
+
   /* Nombre en color blanco */
   h3 {
     margin: 0;
