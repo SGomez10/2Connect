@@ -19,6 +19,7 @@ import FriendRequestMobilePage from '@/views/FriendRequestMobilePage.vue';
 import HelpPage from '@/views/HelpPage.vue';
 import PostPage from '@/views/UserPostPage.vue';
 import UserPostMobilePage from '@/views/UserPostMobilePage.vue';
+import UserTextPostPage from '@/views/UserTextPost.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -120,6 +121,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/post-mobile',
     name: 'PostMobile',
     component: UserPostMobilePage
+  },
+  {
+    path: '/text-post',
+    name: 'TextPost',
+    component: UserTextPostPage
   }
 ]
 

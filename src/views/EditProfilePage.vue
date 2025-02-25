@@ -3,8 +3,9 @@
         <ion-header :translucent="true">
             <ion-toolbar>
                 <ion-buttons slot="start">
-                    <ion-img src="@/assets/icon.png" alt="App Icon"
-                        style="width: 30px; height: 30px; margin-left: 10px;"></ion-img>
+                    <ion-buttons slot="start">
+                        <ion-back-button defaultHref="/my-profile"></ion-back-button>
+                    </ion-buttons>
                 </ion-buttons>
                 <IonTitle>2Connect</IonTitle>
             </ion-toolbar>
@@ -48,7 +49,8 @@ import {
     IonImg,
     IonItem,
     IonTextarea,
-    IonButton
+    IonButton,
+    IonBackButton
 } from '@ionic/vue';
 
 import { useRouter } from 'vue-router';

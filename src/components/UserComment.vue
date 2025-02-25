@@ -1,9 +1,9 @@
 <template>
-    <ion-item class="custom-item bg-transparent" lines="none">
+    <ion-item class="custom-item" lines="none">
       <ion-avatar slot="start">
         <img :src="avatarSrc" alt="Avatar" />
       </ion-avatar>
-      <div class="content-box bg-transparent">
+      <div class="content-box">
         <h3>{{ name }}</h3>
         <p>{{ text }}</p>
       </div>
@@ -29,7 +29,6 @@
 
   /* Fondo del recuadro en modo oscuro */
   .content-box {
-    background: transparent !important;
     padding: 12px;
     border-radius: 10px;
     display: flex;
@@ -40,7 +39,6 @@
   }
 
   ion-item {
-    background: transparent !important;
     margin-top: 10px;
   }
 

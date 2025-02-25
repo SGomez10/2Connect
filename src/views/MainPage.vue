@@ -51,6 +51,38 @@
                         :comments="2"
                         :shares="0"
                         />
+                        <text-post-component 
+                        avatarSrc="https://ionicframework.com/docs/demos/api/list/avatar-han.png"
+                        nombreUser="Han Solo"
+                        desc="1 de Febrero de 2025 20:50h"
+                        contentText="Hola que tal todo"
+                        :comments="2"
+                        :shares="0"
+                        />
+                        <text-post-component 
+                        avatarSrc="https://ionicframework.com/docs/demos/api/list/avatar-han.png"
+                        nombreUser="Han Solo"
+                        desc="1 de Febrero de 2025 20:50h"
+                        contentText="Hola que tal todo"
+                        :comments="2"
+                        :shares="0"
+                        />
+                        <text-post-component 
+                        avatarSrc="https://ionicframework.com/docs/demos/api/list/avatar-han.png"
+                        nombreUser="Han Solo"
+                        desc="1 de Febrero de 2025 20:50h"
+                        contentText="Hola que tal todo"
+                        :comments="2"
+                        :shares="0"
+                        />
+                        <text-post-component 
+                        avatarSrc="https://ionicframework.com/docs/demos/api/list/avatar-han.png"
+                        nombreUser="Han Solo"
+                        desc="1 de Febrero de 2025 20:50h"
+                        contentText="Hola que tal todo"
+                        :comments="2"
+                        :shares="0"
+                        />
                     </ion-col>
                 </ion-row>
             </ion-grid>
@@ -164,6 +196,7 @@ ion-col, ion-grid, ion-row {
 .desktop-only {
     display: none;
 }
+
 @media (min-width: 768px) {
     .desktop-only {
         display: block;

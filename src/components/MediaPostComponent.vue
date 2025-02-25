@@ -30,8 +30,11 @@
 
     <!-- Contenedor para los botones -->
     <div class="button-group">
-      <ion-button fill="clear" @click.stop>Me gusta</ion-button>
-      <ion-button fill="clear" router-link="/comments" @click.stop>Comentar</ion-button>
+      <ion-button fill="clear" @click="toggleLike" @click.stop>
+        <ion-icon :icon="isLiked ? heart : heartOutline"></ion-icon>
+        Me gusta
+      </ion-button>
+      <ion-button fill="clear" @click="handleCommentsClick" @click.stop>Comentar</ion-button>
       <ion-button fill="clear" @click.stop>Compartir</ion-button>
       <ion-button fill="clear" @click="showReportAlert" @click.stop>Reportar</ion-button>
     </div>
@@ -47,6 +50,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 import { Pagination } from 'swiper/modules';
+import { heartOutline, heart } from 'ionicons/icons';
 
 import { 
   IonCard, 
@@ -61,6 +65,7 @@ import {
   IonContent 
 } from '@ionic/vue';
 
+import { defineProps, ref } from 'vue';
 import { PropType } from 'vue';
 
 const props = defineProps({
@@ -71,6 +76,12 @@ const props = defineProps({
   comments: Number,
   shares: Number
 });
+
+const isLiked = ref(false);
+
+const toggleLike = () => {
+  isLiked.value = !isLiked.value;
+};
 
 const showReportAlert = async () => {
   const alert = await alertController.create({
@@ -120,6 +131,14 @@ const esMovil = () => {
 const irAPost = () => {
   if (esMovil()) {
     router.push('/post-mobile'); // Redirigir a la versión móvil
+  } else {
+    router.push('/post'); // Redirigir a la versión de escritorio
+  }
+};
+
+const handleCommentsClick = () => {
+  if (esMovil()) {
+    router.push('/comments'); // Redirigir a la versión móvil
   } else {
     router.push('/post'); // Redirigir a la versión de escritorio
   }

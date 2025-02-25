@@ -66,14 +66,15 @@
                     </ion-col>
                 </ion-row>
         </IonContent>
-    </IonPage>
-    <ion-alert
+        <ion-alert
         :is-open="isAlertOpen"
         header="Aviso"
         message="Se ha eliminado este usuario de tus amigos"
         buttons="OK"
         @didDismiss="isAlertOpen = false"
     ></ion-alert>
+    </IonPage>
+
 </template>
 
 <script setup lang="ts">

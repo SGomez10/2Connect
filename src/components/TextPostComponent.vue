@@ -1,6 +1,6 @@
 <template>
     <ion-card>
-      <ion-card-header>
+      <ion-card-header  @click="irAUsuario" style="cursor: pointer;">
         <div class="header-content">
           <ion-avatar>
             <img :src="avatarSrc" alt="Avatar">
@@ -11,7 +11,7 @@
           </div>
         </div>
       </ion-card-header>
-      <ion-card-content>
+      <ion-card-content @click="irAPost" style="cursor: pointer;">
         <p class="card-text">{{ contentText }}</p>
         <div class="card-info">
           <p>{{ comments }} Comentarios</p>
@@ -19,9 +19,12 @@
         </div> 
         <!-- Contenedor para los botones con flexbox para mantenerlos dentro del card -->
         <div class="button-group">
-          <ion-button fill="clear">Me gusta</ion-button>
-          <ion-button fill="clear" router-link="/comments">Comentar</ion-button>
-          <ion-button fill="clear">Compartir</ion-button>
+          <ion-button fill="clear" @click="toggleLike" @click.stop>
+        <ion-icon :icon="isLiked ? heart : heartOutline"></ion-icon>
+        Me gusta
+      </ion-button>
+          <ion-button fill="clear" @click="handleCommentsClick" @click.stop>Comentar</ion-button>
+          <ion-button fill="clear" @click.stop>Compartir</ion-button>
           <ion-button fill="clear" @click="showReportAlert">Reportar</ion-button>
         </div>
       </ion-card-content>
@@ -39,7 +42,35 @@
     IonCardContent, 
     IonButton 
   } from '@ionic/vue';
-  
+  import { heartOutline, heart } from 'ionicons/icons';
+
+  import { useRouter } from 'vue-router';
+  const router = useRouter();
+
+  const irAUsuario = () => {
+    router.push('/friend-profile'); // Redirige a la página de perfil del usuario
+  };
+
+  const esMovil = () => {
+    return window.innerWidth <= 768; // Se considera móvil si el ancho es menor o igual a 768px
+  };
+
+  const irAPost = () => {
+    if (esMovil()) {
+      router.push('/text-post'); // Redirigir a la versión móvil
+    } else {
+      router.push('/text-post'); // Redirigir a la versión de escritorio
+    }
+  };
+
+  const handleCommentsClick = () => {
+    if (esMovil()) {
+      router.push('/comments'); // Redirigir a la versión móvil
+    } else {
+      router.push('/text-post'); // Redirigir a la versión de escritorio
+    }
+  };
+
   const props = defineProps({
     avatarSrc: String,
     nombreUser: String,
@@ -81,6 +112,14 @@
 
   await alert.present();
   };
+
+  import { defineProps, ref } from 'vue';
+  const isLiked = ref(false);
+
+  const toggleLike = () => {
+    isLiked.value = !isLiked.value;
+  };
+
 
   </script>
   
