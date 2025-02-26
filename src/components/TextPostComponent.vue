@@ -20,13 +20,19 @@
         <!-- Contenedor para los botones con flexbox para mantenerlos dentro del card -->
         <div class="button-group">
           <ion-button fill="clear" @click="toggleLike" @click.stop>
-        <ion-icon :icon="isLiked ? heart : heartOutline"></ion-icon>
-        Me gusta
-      </ion-button>
+            <ion-icon :icon="isLiked ? heart : heartOutline"></ion-icon>
+            Me gusta
+          </ion-button>
           <ion-button fill="clear" @click="handleCommentsClick" @click.stop>Comentar</ion-button>
-          <ion-button fill="clear" @click.stop>Compartir</ion-button>
-          <ion-button fill="clear" @click="showReportAlert">Reportar</ion-button>
-        </div>
+          <ion-button fill="clear" @click.stop>
+            <ion-icon :icon="shareSocialOutline"></ion-icon>
+            Compartir
+          </ion-button>
+          <ion-button fill="clear" @click="showReportAlert" @click.stop>
+            <ion-icon :icon="flagOutline"></ion-icon>
+            Reportar
+          </ion-button>       
+     </div>
       </ion-card-content>
     </ion-card>
   </template>
@@ -40,9 +46,10 @@
     IonCardTitle, 
     IonCardSubtitle, 
     IonCardContent, 
-    IonButton 
+    IonButton,
+    IonIcon 
   } from '@ionic/vue';
-  import { heartOutline, heart } from 'ionicons/icons';
+  import { heartOutline, heart, shareSocialOutline, flagOutline } from 'ionicons/icons';
 
   import { useRouter } from 'vue-router';
   const router = useRouter();

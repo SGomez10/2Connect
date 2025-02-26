@@ -35,8 +35,14 @@
         Me gusta
       </ion-button>
       <ion-button fill="clear" @click="handleCommentsClick" @click.stop>Comentar</ion-button>
-      <ion-button fill="clear" @click.stop>Compartir</ion-button>
-      <ion-button fill="clear" @click="showReportAlert" @click.stop>Reportar</ion-button>
+      <ion-button fill="clear" @click.stop>
+        <ion-icon :icon="shareSocialOutline"></ion-icon>
+        Compartir
+      </ion-button>
+      <ion-button fill="clear" @click="showReportAlert" @click.stop>
+        <ion-icon :icon="flagOutline"></ion-icon>
+        Reportar
+      </ion-button>
     </div>
   </ion-card-content>
 </ion-card>
@@ -50,7 +56,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 import { Pagination } from 'swiper/modules';
-import { heartOutline, heart } from 'ionicons/icons';
+import { heartOutline, heart, shareSocialOutline, flagOutline } from 'ionicons/icons';
 
 import { 
   IonCard, 
@@ -62,7 +68,8 @@ import {
   IonImg, 
   IonButton,
   IonPage,
-  IonContent 
+  IonContent,
+  IonIcon 
 } from '@ionic/vue';
 
 import { defineProps, ref } from 'vue';
