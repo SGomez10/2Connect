@@ -9,7 +9,7 @@
       </ion-toolbar>
     </ion-header>
 
-    <ion-content class="ion-padding">
+    <ion-content class="content-container ion-padding">
       <div class="profile-container">
         <ion-avatar class="avatar">
           <img src="https://ionicframework.com/docs/demos/api/list/avatar-han.png" alt="Avatar" />
@@ -31,7 +31,7 @@
       
       <!-- Zona de comentarios de otros usuarios -->
 
-      <ion-list lines="none">
+      <ion-list lines="none" class="comment-list">
         <UserComment
           avatarSrc="https://ionicframework.com/docs/demos/api/list/avatar-finn.png"
           name="Finn"
@@ -42,10 +42,68 @@
           name="Han Solo"
           text="Este es otro ejemplo de comentario"
         />
+        <UserComment
+          avatarSrc="https://ionicframework.com/docs/demos/api/list/avatar-han.png"
+          name="Han Solo"
+          text="Este es otro ejemplo de comentario"
+        />
+        <UserComment
+          avatarSrc="https://ionicframework.com/docs/demos/api/list/avatar-han.png"
+          name="Han Solo"
+          text="Este es otro ejemplo de comentario"
+        />
+        <UserComment
+          avatarSrc="https://ionicframework.com/docs/demos/api/list/avatar-han.png"
+          name="Han Solo"
+          text="Este es otro ejemplo de comentario"
+        />
+        <UserComment
+          avatarSrc="https://ionicframework.com/docs/demos/api/list/avatar-han.png"
+          name="Han Solo"
+          text="Este es otro ejemplo de comentario"
+        />
+        <UserComment
+          avatarSrc="https://ionicframework.com/docs/demos/api/list/avatar-han.png"
+          name="Han Solo"
+          text="Este es otro ejemplo de comentario"
+        />
+        <UserComment
+          avatarSrc="https://ionicframework.com/docs/demos/api/list/avatar-han.png"
+          name="Han Solo"
+          text="Este es otro ejemplo de comentario"
+        />
+        <UserComment
+          avatarSrc="https://ionicframework.com/docs/demos/api/list/avatar-han.png"
+          name="Han Solo"
+          text="Este es otro ejemplo de comentario"
+        />
+        <UserComment
+          avatarSrc="https://ionicframework.com/docs/demos/api/list/avatar-han.png"
+          name="Han Solo"
+          text="Este es otro ejemplo de comentario"
+        />
+        <UserComment
+          avatarSrc="https://ionicframework.com/docs/demos/api/list/avatar-han.png"
+          name="Han Solo"
+          text="Este es otro ejemplo de comentario"
+        />
+        <UserComment
+          avatarSrc="https://ionicframework.com/docs/demos/api/list/avatar-han.png"
+          name="Han Solo"
+          text="Este es otro ejemplo de comentario"
+        />
         <!-- Agrega más UserComment según sea necesario -->
       </ion-list>
-
     </ion-content>
+    <ion-footer class="footer-item">
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="https://ionicframework.com/docs/demos/api/list/avatar-han.png" />
+        </ion-avatar>
+        <ion-input placeholder="Escribe un comentario..."></ion-input>
+        <ion-icon slot="end" icon="send-outline"></ion-icon>
+      </ion-item>
+    </ion-footer>
   </ion-page>
 </template>
 
@@ -59,6 +117,10 @@ IonBackButton,
 IonButtons, 
 IonAvatar, 
 IonList,
+IonItem,
+IonInput,
+IonIcon,
+IonFooter
 } from '@ionic/vue';
 import UserComment from '@/components/UserComment.vue';
 </script>
@@ -96,6 +158,22 @@ import UserComment from '@/components/UserComment.vue';
   border-radius: 5px;
   color: #333;
   text-align: justify;
+}
+.content-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 56px); /* Ajusta el tamaño del contenido para dejar espacio al ion-footer */
+}
+
+.comment-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.footer-item {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 </style>
