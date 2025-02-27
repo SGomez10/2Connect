@@ -34,6 +34,25 @@
                         </ion-list>
                     </ion-col>
                     <ion-col size="12" size-md="9" class="scrollable-column">
+                        <div class="container ion-padding"> 
+                            <div class="header-section">
+                                <ion-avatar>
+                                    <img src="https://ionicframework.com/docs/demos/api/list/avatar-finn.png" />
+                                </ion-avatar>
+                                <input type="text" placeholder="Plasma aqui tus pensamientos" class="input-field" />
+                            </div>
+                            <hr />
+                            <div class="button-section">
+                                <ion-button expand="block">
+                                    <ion-icon slot="start" name="image-outline"></ion-icon>
+                                    Añadir imagen/video
+                                </ion-button>
+                                <ion-button expand="block">
+                                    <ion-icon slot="start" name="add-circle-outline"></ion-icon>
+                                    Publicar post
+                                </ion-button>
+                            </div>
+                        </div>
                         <media-post-component
                         avatarSrc="https://ionicframework.com/docs/demos/api/list/avatar-finn.png"
                         nombreUser="Finn"
@@ -261,5 +280,37 @@ ion-col, ion-grid, ion-row {
     font-size: 12px;
     color: gray;
 }
+/* Estilos para la sección addPost*/
+.header-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
 
+}
+
+.container{
+    background-color: #222222; /* Fondo gris */
+    border-radius: 5px; /* Esquinas redondeadas */
+    padding: 20px; /* Espaciado interno */
+}
+
+.input-field {
+    flex: 1;
+    margin-left: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.button-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.button-section ion-button {
+    flex: 1;
+    margin: 0 5px;
+
+}
 </style>

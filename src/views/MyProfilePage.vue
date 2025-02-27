@@ -3,11 +3,23 @@
 
         <IonMenu content-id="main-content" side="end">
             <IonContent>
-                <ion-list>
-                    <ion-item button @click="navigateTo('/user-data')">Mis Estadísticas</ion-item>
-                    <ion-item button @click="navigateTo('/help')">Ayuda</ion-item>
-                    <ion-item button @click="navigateTo('/faq')">Preguntas Frecuentes</ion-item>
-                    <ion-item button @click="logout">Log Out</ion-item>
+                <ion-list lines="none">
+                    <ion-item button @click="navigateTo('/user-data')">
+                        <ion-icon slot="start" name="bar-chart-outline"></ion-icon>
+                        Mis Estadísticas
+                    </ion-item>
+                    <ion-item button @click="navigateTo('/help')">
+                        <ion-icon slot="start" name="information-circle-outline"></ion-icon>
+                        Ayuda
+                    </ion-item>
+                    <ion-item button @click="navigateTo('/faq')">
+                        <ion-icon slot="start" name="help-circle-outline"></ion-icon>
+                        Preguntas Frecuentes
+                    </ion-item>
+                    <ion-item button @click="logout">
+                        <ion-icon slot="start" name="log-out-outline"></ion-icon>
+                        Log Out
+                    </ion-item>
                 </ion-list>
             </IonContent>
         </IonMenu>
@@ -48,7 +60,7 @@
                     </ion-avatar>
                 </ion-col>
                 <ion-col>
-                    <h2 style="margin: 0;">Nombre de Usuario</h2>
+                    <h2 style="margin: 0;">Finn</h2>
                     <ion-button fill="outline" size="small" @click="navigateTo('/edit-profile')">Editar perfil</ion-button>
                 </ion-col>
             </ion-row>

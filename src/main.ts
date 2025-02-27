@@ -15,7 +15,13 @@ import { sendOutline,
   heartOutline,
   heart,
   flagOutline,
-  shareSocialOutline
+  shareSocialOutline,
+  barChartOutline,
+  helpCircleOutline,
+  logOutOutline,
+  informationCircleOutline,
+  imageOutline,
+  addCircleOutline
 } from 'ionicons/icons';
 
 /* Core CSS required for Ionic components to work properly */
@@ -60,7 +66,13 @@ addIcons({
   'heart-outline': heartOutline,
   'heart': heart,
   'flag-outline': flagOutline,
-  'share-social-outline': shareSocialOutline
+  'share-social-outline': shareSocialOutline,
+  'bar-chart-outline': barChartOutline,
+  'help-circle-outline': helpCircleOutline,
+  'log-out-outline': logOutOutline,
+  'information-circle-outline': informationCircleOutline,
+  'image-outline': imageOutline,
+  'add-circle-outline': addCircleOutline
 });
 
 const app = createApp(App)
