@@ -26,6 +26,7 @@
         <ion-content>
             <ion-grid>
                 <ion-row class="no-margin">
+                    
                     <ion-col size="12" size-md="3" class="desktop-only scrollable-column no-margin">
                         <ion-list class="no-margin">
                             <div>
@@ -33,6 +34,7 @@
                             </div>
                         </ion-list>
                     </ion-col>
+
                     <ion-col size="12" size-md="9" class="scrollable-column">
                         <div class="container ion-padding"> 
                             <div class="header-section">
@@ -45,11 +47,11 @@
                             <div class="button-section">
                                 <ion-button expand="block">
                                     <ion-icon slot="start" name="image-outline"></ion-icon>
-                                    Añadir imagen/video
+                                    Añadir media
                                 </ion-button>
                                 <ion-button expand="block">
                                     <ion-icon slot="start" name="add-circle-outline"></ion-icon>
-                                    Publicar post
+                                    Publicar
                                 </ion-button>
                             </div>
                         </div>

@@ -21,7 +21,11 @@ import { sendOutline,
   logOutOutline,
   informationCircleOutline,
   imageOutline,
-  addCircleOutline
+  addCircleOutline,
+  logoFacebook,
+  logoInstagram,
+  logoTwitter,
+  logoWhatsapp,
 } from 'ionicons/icons';
 
 /* Core CSS required for Ionic components to work properly */
@@ -72,7 +76,11 @@ addIcons({
   'log-out-outline': logOutOutline,
   'information-circle-outline': informationCircleOutline,
   'image-outline': imageOutline,
-  'add-circle-outline': addCircleOutline
+  'add-circle-outline': addCircleOutline,
+  'logo-facebook': logoFacebook,
+  'logo-instagram': logoInstagram,
+  'logo-twitter': logoTwitter,
+  'logo-whatsapp': logoWhatsapp
 });
 
 const app = createApp(App)

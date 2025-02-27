@@ -16,7 +16,10 @@
         </ion-avatar>
         <div class="text-content">
           <h3>Han Solo</h3>
-          <small>Descripción breve o información adicional</small>
+          <small>1 de Febrero de 2025 20:50h</small>
+        </div>
+        <div class="socials">
+          
         </div>
       </div>
       <div class="text-view">
@@ -156,6 +159,7 @@ import UserComment from '@/components/UserComment.vue';
   padding: 10px;
   background-color: #f0f0f0;
   border-radius: 5px;
+  border-color: antiquewhite;
   color: #333;
   text-align: justify;
 }

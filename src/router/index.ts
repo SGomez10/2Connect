@@ -20,6 +20,7 @@ import HelpPage from '@/views/HelpPage.vue';
 import PostPage from '@/views/UserPostPage.vue';
 import UserPostMobilePage from '@/views/UserPostMobilePage.vue';
 import UserTextPostPage from '@/views/UserTextPost.vue';
+import CreatePostPage from '@/views/CreatePostPage.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -126,6 +127,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/text-post',
     name: 'TextPost',
     component: UserTextPostPage
+  },
+  {
+    path: '/create-post',
+    name: 'CreatePost',
+    component: CreatePostPage
   }
 ]
 

@@ -24,7 +24,7 @@
             Me gusta
           </ion-button>
           <ion-button fill="clear" @click="handleCommentsClick" @click.stop>Comentar</ion-button>
-          <ion-button fill="clear" @click.stop>
+          <ion-button fill="clear"  @click="showShareAlert" @click.stop>
             <ion-icon :icon="shareSocialOutline"></ion-icon>
             Compartir
           </ion-button>
@@ -86,6 +86,40 @@
     comments: Number,
     shares: Number
   });
+
+  const showShareAlert = async () => {
+  const alert = await alertController.create({
+    header: 'Compartir en:',
+    buttons: [
+      {
+        text: 'Facebook',
+        handler: () => console.log('Compartir en Facebook'),
+        cssClass: 'custom-icon-button facebook'
+      },
+      {
+        text: 'Twitter',
+        handler: () => console.log('Compartir en Twitter'),
+        cssClass: 'custom-icon-button twitter'
+      },
+      {
+        text: 'WhatsApp',
+        handler: () => console.log('Compartir en WhatsApp'),
+        cssClass: 'custom-icon-button whatsapp'
+      },
+      {
+        text: 'Instagram',
+        handler: () => console.log('Compartir en Instagram'),
+        cssClass: 'custom-icon-button instagram'
+      },
+      {
+        text: 'Cancelar',
+        role: 'cancel',
+      }
+    ],
+    cssClass: 'custom-share-alert'
+  });
+  await alert.present();
+};
 
   const showReportAlert = async () => {
   const alert = await alertController.create({
@@ -164,17 +198,10 @@
   }
   
   .button-group {
-    margin-top: 10px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     gap: 10px;
     flex-wrap: wrap;
-  }
-  
-  ion-button {
-    flex: 1 1 auto;
-    min-width: 80px;
-    max-width: calc(50% - 10px);
   }
   
   @media (min-width: 768px) {

@@ -3,23 +3,23 @@
       <ion-header>
         <ion-toolbar>
           <ion-buttons slot="start">
-            <ion-back-button></ion-back-button>
+            <ion-back-button defaultHref="/main"></ion-back-button>
           </ion-buttons>
           <ion-title>Comentarios</ion-title>
         </ion-toolbar>
       </ion-header>
       
       <ion-content>
-        <ion-item>
+        <ion-item lines="none">
             <ion-avatar slot="start">
               <img src="https://ionicframework.com/docs/demos/api/list/avatar-finn.png" alt="Avatar">
             </ion-avatar>
-            <ion-input type="text" placeholder="Escribe aquí tu comentario sobre el post" class="ion-padding-start"></ion-input>
+            <ion-input type="text" placeholder="Escribe aquí tu comentario sobre el post" class="ion-padding-start comment-input"></ion-input>
         </ion-item>
 
         <!-- Zona de comentarios de otros usuarios -->
 
-        <ion-list lines="none" class="bg-transparent">
+        <ion-list lines="none">
           <UserComment
             avatarSrc="https://ionicframework.com/docs/demos/api/list/avatar-finn.png"
             name="Finn"
@@ -57,9 +57,8 @@
   </script>
 
   <style scoped>
-
-    .bg-transparent {
-      background: transparent;
-    }
-  
+  .comment-input{
+    border: 1px solid white;
+    border-radius: 5px;
+  }
   </style>
