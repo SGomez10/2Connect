@@ -44,7 +44,7 @@
               </swiper>
             </ion-col>
   
-            <ion-col size="4">
+            <ion-col size="4" class="white-background">
               <ion-item class="custom-item">
                 <ion-avatar slot="start">
                   <img src="https://ionicframework.com/docs/demos/api/list/avatar-finn.png" alt="Avatar" />
@@ -246,5 +246,8 @@
       padding: 10px;
       box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Añade una sombra para separar visualmente */
     }
+    .white-background {
+    background-color: white;
+  }
 </style>
   

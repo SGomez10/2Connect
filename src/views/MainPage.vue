@@ -26,8 +26,8 @@
         <ion-content>
             <ion-grid>
                 <ion-row class="no-margin">
-                    <ion-col size="12" size-md="3" class="desktop-only scrollable-column no-margin">
-                        <ion-list class="no-margin" lines="full">
+                    <ion-col size="12" size-md="3" class="desktop-only scrollable-column no-margin no-padding">
+                        <ion-list class="no-margin no-padding" lines="full">
                             <div>
                                 <h2 class="margin-left">Mensajes recientes</h2>
                             </div>
@@ -37,14 +37,12 @@
                                 name="Finn"
                                 text="Luego hablamos"
                             />
-
                             <ChatListComponent 
-                            link="/chat/1"
+                                link="/chat/1"
                                 avatar-src="https://ionicframework.com/docs/demos/api/list/avatar-han.png"
                                 name="Han Solo"
                                 text="Empanadas"
                             />
-
                             <ChatListComponent 
                                 link="/chat/1"
                                 avatar-src="https://ionicframework.com/docs/demos/api/list/avatar-luke.png"
@@ -54,7 +52,7 @@
                         </ion-list>
                     </ion-col>
                     <ion-col size="12" size-md="9" class="scrollable-column">
-                        <div class="container ion-padding"> 
+                        <div class="container ion-padding add-post-container"> 
                             <div class="header-section">
                                 <ion-avatar>
                                     <img src="https://ionicframework.com/docs/demos/api/list/avatar-finn.png" />
@@ -238,6 +236,31 @@ ion-col, ion-grid, ion-row {
 .margin-left {
   margin-left: 16px;
 }
+.no-margin {
+  margin: 0 !important;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.scrollable-column {
+  height: 100vh;
+  overflow: auto;
+  margin-top: 0;
+}
+
+ion-col, ion-grid, ion-row {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.add-post-container {
+    margin-left: 11px; /* Ajusta este valor según sea necesario */
+    margin-right: 11px; /* Ajusta este valor según sea necesario */
+}
+
+
 .desktop-only {
     display: none;
 }
@@ -306,6 +329,7 @@ ion-col, ion-grid, ion-row {
     font-size: 12px;
     color: gray;
 }
+
 /* Estilos para la sección addPost*/
 .header-section {
     display: flex;
@@ -323,10 +347,52 @@ ion-col, ion-grid, ion-row {
 .input-field {
     flex: 1;
     margin-left: 10px;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
+    padding: 10px; /* Aumenta el padding para mejor legibilidad */
+    border: 1px solid #ccc; /* Borde sutil */
+    border-radius: 8px; /* Esquinas más redondeadas */
+    outline: 1px solid #585858; /* Outline azul (puedes cambiar el color) */
+    outline-offset: 2px; /* Espacio entre el borde y el outline */
+    font-size: 14px; /* Tamaño de fuente */
+    transition: outline-color 0.3s ease; /* Transición suave para el outline */
+  }
+
+  /* Cambiar el color del outline al enfocar el input */
+  .input-field:focus {
+    outline-color: #10dc60;  
+    border-color: #10dc60; 
+  }
+
+  /* Estilos para el input-field */
+  .input-field {
+    flex: 1;
+    margin-left: 10px;
+    padding: 10px; /* Aumenta el padding para mejor legibilidad */
+    border: 1px solid #ccc; /* Borde sutil */
+    border-radius: 8px; /* Esquinas más redondeadas */
+    outline: 2px solid #3880ff; /* Outline azul*/
+    outline-offset: 2px; /* Espacio entre el borde y el outline */
+    font-size: 14px; /* Tamaño de fuente */
+    transition: outline-color 0.3s ease; /* Transición suave para el outline */
+    color: #ffffff; /* Color del texto del input */
+  }
+
+  /* Cambiar el color del placeholder */
+  .input-field::placeholder {
+    color: #888; /* Color del placeholder */
+    opacity: 1; /* Asegura que el color se aplique correctamente */
+  }
+
+  /* Cambiar el color del outline y del placeholder al enfocar el input */
+  .input-field:focus {
+    outline-color: #10dc60; /* Verde */
+    border-color: #10dc60; /* Cambiar el color del borde al enfocar */
+  }
+
+  .input-field:focus::placeholder {
+    color: #bbb; /* Color del placeholder al enfocar */
+  }
+
+
 
 .button-section {
     display: flex;
