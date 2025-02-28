@@ -22,6 +22,8 @@ import { sendOutline,
   informationCircleOutline,
   imageOutline,
   addCircleOutline,
+  trashOutline,
+  createOutline,
   logoFacebook,
   logoInstagram,
   logoTwitter,
@@ -80,7 +82,9 @@ addIcons({
   'logo-facebook': logoFacebook,
   'logo-instagram': logoInstagram,
   'logo-twitter': logoTwitter,
-  'logo-whatsapp': logoWhatsapp
+  'logo-whatsapp': logoWhatsapp,
+  'trash-outline': trashOutline,
+  'create-outline': createOutline,
 });
 
 const app = createApp(App)

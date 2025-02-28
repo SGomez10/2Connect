@@ -26,15 +26,33 @@
         <ion-content>
             <ion-grid>
                 <ion-row class="no-margin">
-                    
                     <ion-col size="12" size-md="3" class="desktop-only scrollable-column no-margin">
-                        <ion-list class="no-margin">
+                        <ion-list class="no-margin" lines="full">
                             <div>
-                                <h2 class="margin-left">Mensajes</h2>
+                                <h2 class="margin-left">Mensajes recientes</h2>
                             </div>
+                            <ChatListComponent
+                                link="/chat/1"
+                                avatar-src="https://ionicframework.com/docs/demos/api/list/avatar-finn.png"
+                                name="Finn"
+                                text="Luego hablamos"
+                            />
+
+                            <ChatListComponent 
+                            link="/chat/1"
+                                avatar-src="https://ionicframework.com/docs/demos/api/list/avatar-han.png"
+                                name="Han Solo"
+                                text="Empanadas"
+                            />
+
+                            <ChatListComponent 
+                                link="/chat/1"
+                                avatar-src="https://ionicframework.com/docs/demos/api/list/avatar-luke.png"
+                                name="Luke Skywalker"
+                                text="Ok"            
+                            />
                         </ion-list>
                     </ion-col>
-
                     <ion-col size="12" size-md="9" class="scrollable-column">
                         <div class="container ion-padding"> 
                             <div class="header-section">
@@ -47,11 +65,11 @@
                             <div class="button-section">
                                 <ion-button expand="block">
                                     <ion-icon slot="start" name="image-outline"></ion-icon>
-                                    Añadir media
+                                    Añadir imagen/video
                                 </ion-button>
                                 <ion-button expand="block">
                                     <ion-icon slot="start" name="add-circle-outline"></ion-icon>
-                                    Publicar
+                                    Publicar post
                                 </ion-button>
                             </div>
                         </div>
@@ -158,6 +176,7 @@ import { ref } from 'vue';
 
 import MediaPostComponent from '@/components/MediaPostComponent.vue';
 import TextPostComponent from '@/components/TextPostComponent.vue';
+import ChatListComponent from '@/components/ChatListComponent.vue';
 
 const notifications = ref([
     { icon: "https://ionicframework.com/docs/demos/api/list/avatar-han.png", message: "Han Solo te ha mencionado en un comentario", time: "Hace 5 min" },

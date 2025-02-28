@@ -48,7 +48,18 @@
 
                             <h3>Solicitudes de amistad:</h3>
                             <ion-list class="bg-transparent horizontal-list" lines="none">
-                                
+                                <ion-item class="no-padding">
+                                    <FrReqDeskComponent image-src="https://ionicframework.com/docs/demos/api/list/avatar-han.png" title="Han Solo"/>
+                                </ion-item>
+                                <ion-item class="no-padding">
+                                    <FrReqDeskComponent image-src="https://ionicframework.com/docs/demos/api/list/avatar-leia.png" title="Leia Organa"/>
+                                </ion-item>
+                                <ion-item class="no-padding">
+                                    <FrReqDeskComponent image-src="https://ionicframework.com/docs/demos/api/list/avatar-luke.png" title="Luke Skywalker"/>
+                                </ion-item>
+                                <ion-item class="no-padding">
+                                    <FrReqDeskComponent image-src="https://ionicframework.com/docs/demos/api/list/avatar-finn.png" title="Finn"/>
+                                </ion-item>
                             </ion-list>
 
                             <h3>Sugerencias de amistad:</h3>
@@ -94,6 +105,7 @@ import { useRouter } from 'vue-router';
 import { ref } from 'vue';
 import FriendSuggesComponent from '@/components/FriendSuggesComponent.vue';
 import FriendSuggestDesktopComponent from '@/components/FriendSuggestDesktopComponent.vue';
+import FrReqDeskComponent from '@/components/FrReqDeskComponent.vue';
 
 const router = useRouter();
 const showNotificationsModal = ref(false);

@@ -1,14 +1,37 @@
 <template>
     <ion-page>
+      <IonMenu side="end" content-id="main-content">
+        <IonContent>
+          <ion-list lines="none">
+            <IonItem button @click="navigateTo('/create-post')">
+              <IonIcon slot="start" name="create-outline"></IonIcon>
+              Editar post
+            </IonItem>
+            <IonItem button @click="confirmDeletePost">
+              <IonIcon slot="start" name="trash-outline"></IonIcon>
+              Eliminar post
+            </IonItem>
+          </ion-list>
+        </IonContent>
+      </IonMenu>
+
       <ion-header>
         <ion-toolbar>
           <ion-buttons slot="start">
-            <ion-back-button></ion-back-button>
+            <ion-back-button defaultHref="/main"></ion-back-button>
           </ion-buttons>
+          <ion-title>desktop Post</ion-title>
+          <IonButtons slot="end">
+            <ion-menu-toggle>
+              <ion-button fill="clear">
+                <ion-icon name="menu-outline"></ion-icon>
+              </ion-button>
+            </ion-menu-toggle>
+          </IonButtons>
         </ion-toolbar>
       </ion-header>
   
-      <ion-content>
+      <ion-content id="main-content">
         <ion-grid>
           <ion-row>
             <ion-col size="8">
@@ -38,6 +61,16 @@
                 Aenean mauris magna, ultricies ut consectetur a, venenatis in dolor. Cras rutrum nulla commodo nunc eleifend aliquet.
                 Donec pellentesque non enim et mollis. Aenean laoreet nunc magna, at sagittis quam rutrum eu. 
               </p>
+              <div class="socials">
+                <ion-icon name="heart-outline" slot="start"></ion-icon>
+                <span>23</span>
+                <div class="socials-right">
+                <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+                <span>45</span>
+                <ion-icon name="share-social-outline"></ion-icon>
+                <span>67</span>
+              </div>
+              </div>
               <div class="buttons-container">
                 <ion-button expand="block" fill="outline" class="flex-button">Me gusta</ion-button>
                 <ion-button expand="block" fill="outline" class="flex-button">Compartir</ion-button>
@@ -84,14 +117,28 @@
     IonCol,
     IonButton,
     IonList,
-    IonInput 
+    IonInput,
+    IonTitle,
+    IonMenu,
+    IonIcon,
+    IonMenuToggle,
+    alertController
   } from '@ionic/vue';
   import { Swiper, SwiperSlide } from 'swiper/vue';
   import 'swiper/css';
   import 'swiper/css/pagination';
   import 'swiper/css/navigation';
   import { Pagination, Navigation } from 'swiper/modules';
+  import { useRouter } from 'vue-router';
+
   import UserComment from '@/components/UserComment.vue';
+    
+  const router = useRouter();
+
+  const navigateTo = (path: string) => {
+      router.push(path);
+  }
+
 
   const showSwiper = ref(false);
   const currentIndex = ref(0);
@@ -106,6 +153,23 @@
   const closeSwiper = () => {
     showSwiper.value = false;
   };
+
+  const confirmDeletePost = async () => {
+    const alert = await alertController.create({
+      header: 'Confirmar',
+      message: 'Se ha eliminado el post',
+      buttons: [
+        {
+          text: 'Aceptar',
+          handler: () => {
+            navigateTo('/main');
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
   </script>
   
   <style scoped>
@@ -127,10 +191,11 @@
     
     /* Asegura que los textos estén alineados correctamente */
     .text-container {
+
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      justify-content: space-between;
       margin-left: 10px;
+      width: 100%;
     }
     
     /* Separa el párrafo del ion-item */
@@ -138,8 +203,30 @@
       margin-top: 10px;
     }
 
-    .bg-transparent {
-      background: transparent;
+    .socials {
+      display: flex;
+      align-items: center; /* Asegura que los elementos estén alineados verticalmente */
+      margin-top: 10px;
+      justify-content: space-between; /* Distribuye el espacio entre los elementos */
+      width: 100%;
+      margin-bottom: 10px;
+      gap: 5px;
+    }
+
+    .socials-right{
+      display: flex;
+      align-items: center; /* Asegura que los elementos estén alineados verticalmente */
+      margin-top: 10px;
+      justify-content: flex-end; 
+    }
+
+    .socials ion-icon {
+      font-size: 24px;
+    }
+
+    .socials span {
+      margin-left: 5px;
+      margin-right: 10px;
     }
 
     .buttons-container {
@@ -159,5 +246,5 @@
       padding: 10px;
       box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Añade una sombra para separar visualmente */
     }
-  </style>
+</style>
   

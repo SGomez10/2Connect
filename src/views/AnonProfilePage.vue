@@ -31,9 +31,10 @@
                     </ion-avatar>
                 </ion-col>
                 <ion-col>
-                    <h2 style="margin: 0;">Fren</h2>
+                    <h2 style="margin: 0;">Finn</h2>
                     <ion-button fill="outline" size="small"  @click="navigateTo('/chat/1')">Enviar mensaje</ion-button>
                     <ion-button fill="outline" size="small"  @click="showAlert">Eliminar de amigos</ion-button>
+                    <ion-icon name="flag-outline" @click="showReportAlert" style="cursor: pointer; margin-left: 8px;"></ion-icon>
                 </ion-col>
             </ion-row>
                 <ion-row>
@@ -73,8 +74,30 @@
         buttons="OK"
         @didDismiss="isAlertOpen = false"
     ></ion-alert>
+    <ion-alert
+        :is-open="isReportAlertOpen"
+        header="Reportar usuario"
+        message="¿Estás seguro que quieres reportar?"
+        :buttons="[
+            {
+                text: 'Cancelar',
+                role: 'cancel'
+            },
+            {
+                text: 'Confirmar',
+                handler: confirmReport
+            }
+        ]"
+        @didDismiss="isReportAlertOpen = false"
+    ></ion-alert>
+    <ion-alert
+        :is-open="isReportConfirmedAlertOpen"
+        header="Reportado"
+        message="El usuario ha sido reportado."
+        buttons="OK"
+        @didDismiss="isReportConfirmedAlertOpen = false"
+    ></ion-alert>
     </IonPage>
-
 </template>
 
 <script setup lang="ts">
@@ -115,10 +138,22 @@
     };
 
     const isAlertOpen = ref(false);
+    const isReportAlertOpen = ref(false);
+    const isReportConfirmedAlertOpen = ref(false);
 
     function showAlert() {
         isAlertOpen.value = true;
     }
+
+    function showReportAlert() {
+        isReportAlertOpen.value = true;
+    }
+
+    function confirmReport() {
+        isReportAlertOpen.value = false;
+        isReportConfirmedAlertOpen.value = true;
+    }
+
     const closeNotificationsModal = () => {
         showNotificationsModal.value = false;
     };

@@ -23,12 +23,12 @@
             </ion-toolbar>
         </ion-header>
 
-        <ion-content :fullscreen="true" class="ion-padding c-bg">
+        <ion-content :fullscreen="true" class="ion-padding">
             <h2>Mensajes</h2>
 
             <ion-searchbar placeholder="Buscar Chat"></ion-searchbar>
                 
-            <ion-list lines="none" class="c-bg">
+            <ion-list lines="none">
 
                 <ChatListComponent
                     link="/chat/1"
@@ -85,15 +85,9 @@ const navigateTo = (path: string) => {
 </script>
 
 <style scoped>
-.c-bg {
-    --background: var(--ion-background-color);
-    --color: var(--ion-text-color);
-}
 .small-text {
     font-size: 0.8em;
-    /* Ajusta el tamaño del texto según sea necesario */
     color: var(--ion-color-medium);
-    /* Ajusta el color del texto según sea necesario */
 }
 .no-underline {
   text-decoration: none;

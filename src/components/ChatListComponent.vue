@@ -1,10 +1,10 @@
 <template>
     <router-link :to="link" class="no-underline">
-      <ion-item class="c-bg">
+      <ion-item>
         <ion-avatar slot="start">
           <img :src="avatarSrc" />
         </ion-avatar>
-        <ion-label class="c-bg">
+        <ion-label>
           <h2>{{ name }}</h2>
           <p class="small-text">{{ text }}</p>
         </ion-label>
@@ -37,9 +37,7 @@
   .no-underline {
     text-decoration: none;
   }
-  .c-bg {
-    --background: var(--ion-background-color);
-  }
+
   .small-text {
     font-size: 0.8em;
     color: var(--ion-color-medium);
