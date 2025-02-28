@@ -1,0 +1,58 @@
+/* Aplicar colores definidos en variables.css */
+ion-header, ion-toolbar {
+    --background: var(--ion-color-header);
+}
+  
+body, ion-page, ion-content {
+    --background: var(--ion-color-background);
+    --color: var(--ion-color-text-primary);
+}
+  
+p {
+    color: var(--ion-color-text-secondary);
+}
+  
+ion-button {
+ --background: var(--ion-color-button-primary);
+ --color: white;
+}
+  
+ion-button.secondary {
+    --background: var(--ion-color-button-secondary);
+}
+  
+.border-element {
+    border: 1px solid var(--ion-color-border);
+}
+
+/* Estilos para las tarjetas */
+ion-card, ion-card-header, ion-card-content {
+    --background: var(--ion-color-card); /* Color blanco */
+    --ion-border-radius: 12px; /* Bordes redondeados */
+    --box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    color: var(--ion-color-text-primary);
+}
+
+/* Estilo para ion-list */
+ion-list {
+    --background: var(--ion-color-list-background); /* Gris claro */
+    --border-radius: 8px;
+    --box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar */
+  }
+  
+  /* Estilo para ion-items */
+  ion-item {
+    --background: var(--ion-color-item-background); /* Blanco para el item */
+    --border-radius: 8px;
+    --padding-start: 16px;
+    --padding-end: 16px;
+    --min-height: 56px;
+    --color: var(--ion-color-text-primary); /* Texto en gris oscuro */
+  }
+  
+  /* Cuando el item está seleccionado o enfocado */
+  ion-item.ion-selected {
+    --background: var(--ion-color-button-primary); /* Color menta pastel para selección */
+    --color: white; /* Texto blanco cuando está seleccionado */
+  }
+    

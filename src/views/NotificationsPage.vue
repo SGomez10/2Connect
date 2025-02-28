@@ -3,7 +3,7 @@
         <ion-header :translucent="true">
             <ion-toolbar>
                 <ion-buttons slot="start">
-                    <ion-back-button></ion-back-button>
+                    <ion-back-button defaultHref="/main"></ion-back-button>
                 </ion-buttons>
                 <ion-title>Notificaciones</ion-title>
             </ion-toolbar>
@@ -72,7 +72,7 @@ import {
 
 <style scoped>
 .notification-list {
-    --background: var(--ion-background-color);
+    --background: transparent;
     margin: 0; /* Remove margins */
     padding: 0; /* Remove padding */
 }

@@ -34,7 +34,7 @@
                             </div>
 
                             <h3>Personas que quizás conozcas:</h3>
-                            <ion-list class="bg-transparent" lines="none">
+                            <ion-list lines="none" class="transparent-list">
                                 <!-- Lista de usuarios sugeridos-->
                                  <FriendSuggesComponent avatar-src="https://ionicframework.com/docs/demos/api/list/avatar-han.png" name="Han Solo" />
                                  <FriendSuggesComponent avatar-src="https://ionicframework.com/docs/demos/api/list/avatar-leia.png" name="Leia Organa" />
@@ -47,7 +47,7 @@
                         <IonCol class="ion-hide-md-down" size="12">
 
                             <h3>Solicitudes de amistad:</h3>
-                            <ion-list class="bg-transparent horizontal-list" lines="none">
+                            <ion-list class="horizontal-list transparent-list" lines="none">
                                 <ion-item class="no-padding">
                                     <FrReqDeskComponent image-src="https://ionicframework.com/docs/demos/api/list/avatar-han.png" title="Han Solo"/>
                                 </ion-item>
@@ -63,7 +63,7 @@
                             </ion-list>
 
                             <h3>Sugerencias de amistad:</h3>
-                            <ion-list class="bg-transparent horizontal-list" lines="none">
+                            <ion-list class="bg-transparent horizontal-list transparent-list" lines="none">
                                 <ion-item class="no-padding">
                                     <FriendSuggestDesktopComponent image-src="https://ionicframework.com/docs/demos/api/list/avatar-han.png" title="Han Solo"/>
                                 </ion-item>
@@ -128,7 +128,6 @@ const closeNotificationsModal = () => {
 
 </script>
 
-
 <style scoped>
 
 /* Estilos para la lista de botones horizontal */
@@ -146,10 +145,6 @@ const closeNotificationsModal = () => {
     flex: 0 0 auto; /* Evita que los botones se estiren o encogan */
     }
 
-    .bg-transparent {
-    background: transparent;
-    }
-
     .horizontal-list {
         display: flex;
         flex-direction: row;
@@ -163,4 +158,36 @@ const closeNotificationsModal = () => {
         display: none; /* Oculta la barra de desplazamiento en navegadores WebKit */
     }
 
+    .transparent-list {
+        --background: transparent; /* Fondo transparente para la lista */
+    }
+
+    ion-list {
+        --background: transparent;
+        --border-radius: 8px;
+        --box-shadow: none; /* Elimina la sombra */
+        padding: 8px;
+    }
+
+    ion-item {
+        --background: transparent; /* Fondo transparente para los items */
+        --border-radius: 8px;
+        --padding-start: 16px;
+        --padding-end: 16px;
+        --min-height: 56px;
+        --color: var(--ion-color-text-primary);
+        margin-bottom: 8px;
+    }
+
+    ion-button {
+        --background: var(--ion-color-list-button-primary);
+        --color: var(--ion-color-list-text);
+        --border-radius: 4px;
+        --padding-start: 12px;
+        --padding-end: 12px;
+    }
+
+    ion-button.secondary {
+        --background: var(--ion-color-list-button-secondary);
+    }
 </style>

@@ -1,2 +1,29 @@
-/* For information on how to create your own theme, please see:
-http://ionicframework.com/docs/theming/ */
+:root {
+    /* Colores principales */
+    --ion-color-header: #BADCFF; 
+    --ion-color-background: #FFDBBB; 
+
+    /* Colores de texto */
+    --ion-color-text-primary: #4A4A4A; 
+    --ion-color-text-secondary: #6D6D6D; 
+
+    /* Colores de botones */
+    --ion-color-button-primary: #A2E8C2; 
+    --ion-color-button-secondary: #FFB3BA; 
+
+    /* Colores de acentos y detalles */
+    --ion-color-accent: #FFE5B4; 
+    --ion-color-border: #D3D3D3; 
+
+    /* Colores para las ion-card */
+    --ion-color-card: #FFFFFF;
+
+    /* Colores para las listas */
+    --ion-color-list-background: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente para la lista */
+    --ion-color-item-background: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente para los items */
+
+    /* Nuevos colores para botones y elementos de la lista */
+    --ion-color-list-button-primary: #A2E8C2; /* Botón primario */
+    --ion-color-list-button-secondary: #FFB3BA; /* Botón secundario */
+    --ion-color-list-text: #4A4A4A; /* Texto en la lista */
+}

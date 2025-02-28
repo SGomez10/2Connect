@@ -28,8 +28,8 @@
                 <IonRow>
                     <IonCol size="12" size-md="6">
                         <h3>Privacidad</h3>
-                        <p>Selecciona la privacidad de tu publicación</p>
-                        <IonSelect label="outline select" placeholder="Selecciona una opción">
+                        <p>En esta parte debes elegir quién puede ver tu nuevo post, en caso de cambiar de opinión, puedes cambiarlo luego.</p>
+                        <IonSelect label="Selección de privacidad" placeholder="Selecciona una opción">
                             <IonSelectOption value="publico">Público</IonSelectOption>
                             <IonSelectOption value="solo-amigos">Solo amigos</IonSelectOption>
                             <IonSelectOption value="privado">Privado</IonSelectOption>
@@ -41,7 +41,7 @@
                 </IonRow>
             </IonGrid>
             <div class="btn-container">
-                <IonButton expand="block" color="primary" shape="round" @click="navigateTo('/main')">Publicar</IonButton>
+                <IonButton expand="block" shape="round" @click="navigateTo('/main')">Publicar</IonButton>
             </div>
         </IonContent>
     </IonPage>    

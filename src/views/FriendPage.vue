@@ -12,7 +12,7 @@
         <IonContent class="ion-padding">
 
             <h3>Amigos</h3>
-            <IonList class="bg-transparent no-lines">
+            <IonList class="bg-transparent" lines="none">
                 <FriendComponent link="/friend-profile" avatarSrc="https://ionicframework.com/docs/demos/api/list/avatar-han.png" name="Han Solo" text="Piloto de la nave Millennium Falcon" />
                 <FriendComponent link="/friend-profile" avatarSrc="https://ionicframework.com/docs/demos/api/list/avatar-leia.png" name="Leia Organa" text="En linea" />
                 <FriendComponent link="/friend-profile" avatarSrc="https://ionicframework.com/docs/demos/api/list/avatar-luke.png" name="Luke Skywalker" text="En linea" />

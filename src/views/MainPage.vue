@@ -1,6 +1,6 @@
 <template>
     <ion-page>
-        <ion-header :translucent="true">
+        <ion-header>
             <ion-toolbar>
                 <ion-title>2Connect</ion-title>
                 <ion-buttons slot="end">
@@ -63,12 +63,12 @@
                             </div>
                             <hr />
                             <div class="button-section">
-                                <ion-button expand="block">
-                                    <ion-icon slot="start" name="image-outline"></ion-icon>
+                                <ion-button expand="block"  @click="navigateTo('/create-post')">
+                                    <ion-icon slot="start" name="image-outline" ></ion-icon>
                                     Añadir imagen/video
                                 </ion-button>
-                                <ion-button expand="block">
-                                    <ion-icon slot="start" name="add-circle-outline"></ion-icon>
+                                <ion-button expand="block"  @click="publishPost">
+                                    <ion-icon slot="start" name="add-circle-outline" ></ion-icon>
                                     Publicar post
                                 </ion-button>
                             </div>
@@ -94,7 +94,7 @@
                         avatarSrc="https://ionicframework.com/docs/demos/api/list/avatar-han.png"
                         nombreUser="Han Solo"
                         desc="1 de Febrero de 2025 20:50h"
-                        contentText="Hola que tal todo"
+                        contentText="Dani es un buen chico"
                         :comments="2"
                         :shares="0"
                         />
@@ -102,7 +102,7 @@
                         avatarSrc="https://ionicframework.com/docs/demos/api/list/avatar-han.png"
                         nombreUser="Han Solo"
                         desc="1 de Febrero de 2025 20:50h"
-                        contentText="Hola que tal todo"
+                        contentText="Ayer comí helado"
                         :comments="2"
                         :shares="0"
                         />
@@ -110,7 +110,7 @@
                         avatarSrc="https://ionicframework.com/docs/demos/api/list/avatar-han.png"
                         nombreUser="Han Solo"
                         desc="1 de Febrero de 2025 20:50h"
-                        contentText="Hola que tal todo"
+                        contentText="Me duele la cabeza"
                         :comments="2"
                         :shares="0"
                         />
@@ -118,7 +118,7 @@
                         avatarSrc="https://ionicframework.com/docs/demos/api/list/avatar-han.png"
                         nombreUser="Han Solo"
                         desc="1 de Febrero de 2025 20:50h"
-                        contentText="Hola que tal todo"
+                        contentText="Compré un coche nuevo"
                         :comments="2"
                         :shares="0"
                         />
@@ -199,6 +199,11 @@ const handleNotificationsClick = () => {
         navigateTo('/notifications'); // Modo móvil: navegar a otra pantalla
     }
 };
+
+const publishPost = () => {
+    alert("Se ha publicado de forma exitosa");
+};
+
 
 const closeNotificationsModal = () => {
     showNotificationsModal.value = false;
@@ -310,7 +315,7 @@ ion-col, ion-grid, ion-row {
 }
 
 .container{
-    background-color: #222222; /* Fondo gris */
+    background-color: #FFFFFF;
     border-radius: 5px; /* Esquinas redondeadas */
     padding: 20px; /* Espaciado interno */
 }
